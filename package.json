@@ -4,6 +4,10 @@
   "description": "final project EPAM Rolling Scopes 2017",
   "main": "index.js",
   "scripts": {
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:dev": "webpack-dev-server --hot",
+    "start:prod": "npm run build && node server.js",
+    "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,11 +25,14 @@
   },
   "homepage": "https://github.com/vramaniuk/movie-finder-app-with-react#readme",
   "engines": {
-    "node": "7.10.0"
+    "node": "7.10.0",
+    "npm": "4.6.1"
   },
   "dependencies": {
     "classnames": "^2.2.5",
+    "compression": "^1.6.2",
     "express": "^4.15.3",
+    "if-env": "^1.0.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.5",

@@ -2,32 +2,45 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const NODE_ENV = process.env.NODE_ENV || 'development';
+const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = {
-  entry: {
-    app: './src/index.js'
-  },
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: `js/[name].js`,
-    publicPath: '/'
-  },
-    watch:NODE_ENV === 'development',
-  devtool: NODE_ENV === 'development' ? "cheap-inline-module-source-map" : null,
-  devServer: {
-    port: 9000,
-    historyApiFallback: true
-  },
-  module: {
-    rules: [
-      { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
-      { test: /\.css$/, use: ['style-loader', 'css-loader'] }
+    entry: {
+        app: './src/index.js'
+    },
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: `[name].js`,
+        publicPath: '/'
+    },
+    watch: !isProduction,
+    devtool: !isProduction && 'cheap-inline-module-source-map',
+    devServer: {
+        port: 9000,
+        historyApiFallback: true
+    },
+    module: {
+        rules: [
+            {test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'},
+            {test: /\.css$/, use: ['style-loader', 'css-loader']}
+        ]
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: path.resolve(__dirname, 'src/index.html')
+        })
+
     ]
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src/index.html')
-    })
-  ]
 };
+
+if (isProduction) {
+    module.exports.plugins.push(
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false,
+                drop_console: true,
+                unsafe: true
+            }
+        })
+    );
+}
