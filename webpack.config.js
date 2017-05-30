@@ -1,23 +1,20 @@
 const path = require('path');
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-
 const isProduction = process.env.NODE_ENV === 'production';
-const NODE_ENV = process.env.NODE_ENV;
+
 module.exports = {
-    entry: {
-        app: './src/index.js'
-    },
+    entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: `[name].js`,
+        filename: `bundle.js`,
         publicPath: '/'
     },
     watch: !isProduction,
     devtool: !isProduction && 'cheap-inline-module-source-map',
     devServer: {
         port: 9000,
-        historyApiFallback: true
+        historyApiFallback: true,
+        contentBase: 'src/'
     },
     module: {
         rules: [
@@ -25,25 +22,18 @@ module.exports = {
             {test: /\.css$/, use: ['style-loader', 'css-loader']}
         ]
     },
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, 'src/index.html')
-        }),
-        new webpack.DefinePlugin({
-            'process.env': {'NODE_ENV': JSON.stringify(NODE_ENV)}
-        })
-
-    ]
+    plugins: []
 };
 
 if (isProduction) {
     module.exports.plugins.push(
+        new webpack.DefinePlugin({
+            'process.env': {'NODE_ENV': JSON.stringify('production')}
+        }),
+        new webpack.optimize.DedupePlugin(),
+        new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false,
-                drop_console: true,
-                unsafe: true
-            }
+            compress: {warnings: false},
         })
     );
 }
