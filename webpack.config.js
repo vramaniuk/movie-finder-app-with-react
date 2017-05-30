@@ -6,8 +6,8 @@ module.exports = {
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: `bundle.js`,
-        publicPath: '/'
+        filename: 'bundle.js',
+        publicPath: '/src'
     },
     watch: !isProduction,
     devtool: !isProduction && 'cheap-inline-module-source-map',
@@ -19,9 +19,9 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /\.jsx?$/,
+                test: /\.js$/,
                 exclude: /node_modules/,
-                loader: 'babel'
+                loader: 'babel-loader'
             },
             {
                 test:   /\.styl$/,
