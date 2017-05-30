@@ -25,10 +25,10 @@ module.exports = {
             },
             {
                 test:   /\.styl$/,
-                loader: 'style!css!stylus?resolve urls'
+                loader: 'style!css!stylus'
             }, {
                 test:   /\.css$/,
-                loader: 'style!css!autoprefixer?browsers=last 2 versions'
+                loader: 'style!css!'
             },
         ]
     },
