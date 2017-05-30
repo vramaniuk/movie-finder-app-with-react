@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const isProduction = process.env.NODE_ENV === 'production';
-
+const NODE_ENV = process.env.NODE_ENV;
 module.exports = {
     entry: {
         app: './src/index.js'
@@ -28,6 +28,9 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src/index.html')
+        }),
+        new webpack.DefinePlugin({
+            'process.env': {'NODE_ENV': JSON.stringify(NODE_ENV)}
         })
 
     ]
