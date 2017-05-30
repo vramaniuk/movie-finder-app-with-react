@@ -17,14 +17,30 @@ module.exports = {
         contentBase: 'src/'
     },
     module: {
-        rules: [
-            {test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'},
-            {test: /\.css$/, use: ['style-loader', 'css-loader']}
+        loaders: [
+            {
+                test: /\.jsx?$/,
+                exclude: /node_modules/,
+                loader: 'babel'
+            },
+            {
+                test:   /\.styl$/,
+                loader: 'style!css!stylus?resolve urls'
+            }, {
+                test:   /\.css$/,
+                loader: 'style!css!autoprefixer?browsers=last 2 versions'
+            },
         ]
     },
     plugins: [],
     resolve: {
-        extensions: [' ', '.js', '.jsx']
+        modulesDirectories: ['node_modules'],
+        extensions: ['', '.js']
+    },
+    resolveLoader: {
+        modulesDirectories: ['node_modules'],
+        moduleTemplates: ['*-loader', '*'],
+        extensions: ['', '.js']
     },
 };
 
