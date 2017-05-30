@@ -21,15 +21,16 @@ module.exports = {
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                loader: 'babel-loader'
+                loader: 'babel'
+            },
+             {
+                test:   /\.css$/,
+                loader: 'style!css'
             },
             {
-                test:   /\.styl$/,
-                loader: 'style!css'
-            }, {
-                test:   /\.css$/,
-                loader: 'style!css!'
-            },
+                test:   /\.(png|jpg|svg|ttf|eot|woff|woff2)$/,
+                loader: 'file?name=[path][name].[ext]'
+            }
         ]
     },
     plugins: [],
