@@ -14,7 +14,7 @@ module.exports = {
     devServer: {
         port: 9000,
         historyApiFallback: true,
-        contentBase: 'src/'
+        contentBase: path.join(__dirname,'src')
     },
     module: {
         loaders: [
@@ -25,11 +25,7 @@ module.exports = {
             },
              {
                 test:   /\.css$/,
-                loader: 'style!css'
-            },
-            {
-                test:   /\.(png|jpg|svg|ttf|eot|woff|woff2)$/,
-                loader: 'file?name=[path][name].[ext]'
+                loader: 'style-loader!css-loader'
             }
         ]
     },
