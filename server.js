@@ -11,7 +11,7 @@ app.use(express.static(path.join(__dirname, 'src'), {index: false}));
 
 // send all other requests to index.html
 app.get('*', (req, res) => {
-    res.sendFile('src/index.html', { root: __dirname });
+    res.sendFile('src/*', { root: __dirname });
 });
 
 app.listen(process.env.PORT || 8080);
