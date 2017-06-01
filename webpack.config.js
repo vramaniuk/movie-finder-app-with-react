@@ -9,7 +9,7 @@ module.exports = {
         filename: 'bundle.js',
         publicPath: '/'
     },
-    watch: !isProduction,
+
     devtool: !isProduction && 'cheap-inline-module-source-map',
     devServer: {
         port: 9000,
