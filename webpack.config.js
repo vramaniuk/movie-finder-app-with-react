@@ -14,7 +14,7 @@ module.exports = {
     devServer: {
         port: 9000,
         historyApiFallback: true,
-        contentBase: 'src/'
+        contentBase: __dirname + '/src'
     },
     module: {
         loaders: [
@@ -23,12 +23,12 @@ module.exports = {
                 exclude: /node_modules/,
                 loader: 'babel'
             },
-             {
-                test:   /\.css$/,
+            {
+                test: /\.css$/,
                 loader: 'style!css'
             },
             {
-                test:   /\.(png|jpg|svg|ttf|eot|woff|woff2)$/,
+                test: /\.(png|jpg|svg|ttf|eot|woff|woff2)$/,
                 loader: 'file?name=[path][name].[ext]'
             }
         ]
