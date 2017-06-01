@@ -5,11 +5,11 @@ const isProduction = process.env.NODE_ENV === 'production';
 module.exports = {
     entry: './src/index.js',
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'src'),
         filename: 'bundle.js',
         publicPath: '/'
     },
-
+    watch: !isProduction,
     devtool: !isProduction && 'cheap-inline-module-source-map',
     devServer: {
         port: 9000,
