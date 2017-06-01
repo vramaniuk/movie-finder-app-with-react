@@ -7,11 +7,11 @@ const app = express();
 app.use(compression());
 
 // serve our bundle
-app.use(express.static(path.join(__dirname, 'src'), {index: false}));
+app.use(express.static(path.join(__dirname, 'dist'), {index: false}));
 
 // send all other requests to index.html
 app.get('*', (req, res) => {
-    res.sendFile('src/*', { root: __dirname });
+    res.sendFile('src/index.html', { root: __dirname });
 });
 
 app.listen(process.env.PORT || 8080);

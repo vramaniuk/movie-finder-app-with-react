@@ -7,7 +7,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'src'),
         filename: 'bundle.js',
-        publicPath: '/'
+        publicPath: '/dist'
     },
     watch: !isProduction,
     devtool: !isProduction && 'cheap-inline-module-source-map',
