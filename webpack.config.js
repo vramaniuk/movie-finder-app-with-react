@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const isProduction = process.env.NODE_ENV === 'production';
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: './src/index.js',
@@ -9,7 +10,6 @@ module.exports = {
         filename: 'bundle.js',
         publicPath: '/'
     },
-    watch: !isProduction,
     devtool: !isProduction && 'cheap-inline-module-source-map',
     devServer: {
         port: 9000,
@@ -17,32 +17,17 @@ module.exports = {
         contentBase: __dirname + '/src'
     },
     module: {
-        loaders: [
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                loader: 'babel'
-            },
-            {
-                test: /\.css$/,
-                loader: 'style!css'
-            },
-            {
-                test: /\.(png|jpg|svg|ttf|eot|woff|woff2)$/,
-                loader: 'file?name=[path][name].[ext]'
-            }
+        rules: [
+            { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
+            { test: /\.css$/, use: ['style-loader', 'css-loader'] }
         ]
     },
-    plugins: [],
-    resolve: {
-        modulesDirectories: ['node_modules'],
-        extensions: ['', '.js']
-    },
-    resolveLoader: {
-        modulesDirectories: ['node_modules'],
-        moduleTemplates: ['*-loader', '*'],
-        extensions: ['', '.js']
-    },
+    plugins: [
+        new HtmlWebpackPlugin({
+        template: path.resolve(__dirname, 'src/index.html')
+    })
+    ],
+
 };
 
 if (isProduction) {
