@@ -25,7 +25,10 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
         template: path.resolve(__dirname, 'src/index.html')
-    })
+    }),
+        new webpack.DefinePlugin({
+            'process.env': {'NODE_ENV': JSON.stringify('development')}
+        })
     ],
 
 };
