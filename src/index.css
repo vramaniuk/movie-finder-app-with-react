@@ -1,4 +1,7 @@
-#asd {
+h1 {
     color: red;
-    background-color: gainsboro ;
+    background-color: lightblue ;
+}
+.changeColor{
+    color: magenta;
 }
