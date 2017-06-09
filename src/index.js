@@ -11,6 +11,7 @@ import store from './store';
 import './index.css';
 
 import firebaseConfig from './config/firebaseConfig';
+
 firebase.initializeApp(firebaseConfig);
 
 const history = syncHistoryWithStore(browserHistory, store);
