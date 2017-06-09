@@ -1,8 +1,8 @@
 export default {
-    apiKey: "AIzaSyCtyVRvapq8iWobrlhMSfIgyOe0qnDmhJk",
-    authDomain: "movie-finder-app-with-react.firebaseapp.com",
-    databaseURL: "https://movie-finder-app-with-react.firebaseio.com",
-    storageBucket: "movie-finder-app-with-react.appspot.com",
-    messagingSenderId: "671867723594"
+    apiKey: "AIzaSyCbOFEoln0qa-qWh6ByyrYtdz0oglH37i0",
+    authDomain: "the-movie-redux.firebaseapp.com",
+    databaseURL: "https://the-movie-redux.firebaseio.com",
+    storageBucket: "the-movie-redux.appspot.com",
+    messagingSenderId: "724964281756"
 
 };
