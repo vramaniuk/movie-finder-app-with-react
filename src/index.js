@@ -1,30 +1,23 @@
-import React, {Component, PropTypes} from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
+import { Router, browserHistory } from 'react-router';
+import { Provider } from 'react-redux';
+import * as firebase from 'firebase';
+import { syncHistoryWithStore } from 'react-router-redux';
+
+import routes from './routes';
+import store from './store';
+
 import './index.css';
-class App extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            text: 'test'
-        }
-    }
 
-    btnOnclick() {
-        document.querySelector('h1').classList.toggle('changeColor');
-    }
+import firebaseConfig from './config/firebaseConfig';
+firebase.initializeApp(firebaseConfig);
 
-    render() {
-        console.log(`State ${this.state.text}`);
-        return (
-            <div style={{backgroundColor: 'lightcyan'}}>
-                <h1>App works!!!</h1>
-                <h3 style={{backgroundColor: 'grey'}}>It's really working!</h3>
-                <button onClick={this.btnOnclick.bind(this)}>{this.state.text}</button>
-            </div>
-        )
-    }
-}
+const history = syncHistoryWithStore(browserHistory, store);
+
 ReactDOM.render(
-    <App/>,
+    <Provider store={store}>
+        <Router routes={routes} history={history} />
+    </Provider>,
     document.querySelector('#app')
 );

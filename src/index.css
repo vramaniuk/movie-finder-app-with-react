@@ -1,7 +1,5 @@
-h1 {
-    color: red;
-    background-color: lightblue ;
-}
-.changeColor{
-    color: green;
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
 }
