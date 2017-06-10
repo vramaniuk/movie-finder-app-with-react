@@ -33,7 +33,17 @@ module.exports = {
 if (isProduction) {
     module.exports.plugins.push(
         new webpack.optimize.UglifyJsPlugin({
-            compress: {warnings: false},
+            beautify: false,
+            comments: false,
+            compress: {
+                sequences: true,
+                booleans: true,
+                loops: true,
+                unused: true,
+                warnings: false,
+                drop_console: true,
+                unsafe: true
+            }
         }),
         new webpack.DefinePlugin({
             'process.env': {
