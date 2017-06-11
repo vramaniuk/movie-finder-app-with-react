@@ -12,7 +12,7 @@ module.exports = {
     },
     devtool: !isProduction && 'cheap-inline-module-source-map',
     devServer: {
-        port: 9000,
+        port: 9002,
         historyApiFallback: true,
         contentBase: __dirname + '/src'
     },

@@ -18,8 +18,8 @@ const MovieDetailsPage = ({movie, isLoggedIn, isFavorite, addMovieToFavorite, re
                 <Paper zDepth={3} className="MovieDetails__image-Paper" rounded={false}>
                   <img src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2${movie.backdrop_path}`}
                        alt={movie.original_title}
-                       className="MovieDetails__image"/><
-                  /Paper>
+                       className="MovieDetails__image"/>
+                  </Paper>
                   :
                   <Paper zDepth={3} className="MovieDetails__image-Paper--none" rounded={false} />
                   }

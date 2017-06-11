@@ -98,8 +98,8 @@ class Navbar extends Component {
                               icon={<GithubIcon viewBox="0 0 20 20" />}
                               labelStyle={{ top: '-2px', paddingLeft: '2px' }}
                   />
-                  <FlatButton label="Portfolio"
-                              href="https://ya.ru"
+                  <FlatButton label="Homework with DOM-AJAX"
+                              href="https://vramaniuk.github.io/Home_Task_1-HTML_CSS-Variant2-/HomeTask2_DOM_AJAX.html"
                               target="_blank"
                               icon={<CodepenIcon viewBox="0 0 130 130" />}
                               labelStyle={{ top: '-2px', paddingLeft: '5px' }}

@@ -1,6 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { MuiThemeProvider } from 'material-ui';
+// import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme'
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import {cyan700} from 'material-ui/styles/colors';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
 import { getGenres } from './actions/genresActions';
@@ -12,6 +15,12 @@ import SearchInput from './containers/SearchInput';
 import Footer from './components/Footer';
 
 injectTapEventPlugin();
+
+const muiTheme = getMuiTheme({
+    palette: {
+        primary1Color: cyan700,
+    }
+});
 
 class App extends Component {
 
@@ -34,7 +43,7 @@ class App extends Component {
 
   render() {
     return (
-      <MuiThemeProvider>
+      <MuiThemeProvider muiTheme={getMuiTheme(muiTheme)}>
         <div className="App">
           <div className="App__header">
             <Navbar />
