@@ -1,4 +1,5 @@
-import React, {Component, PropTypes} from 'react';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { clearMovies, searchMovies } from '../actions/moviesActions';
@@ -6,13 +7,6 @@ import { clearMovies, searchMovies } from '../actions/moviesActions';
 import MoviesList from '../components/MoviesList';
 
 class SearchMoviesPageContainer extends Component {
-
-  static propsTypes = {
-    ownProps: PropTypes.object.isRequired,
-    movies: PropTypes.object.isRequired,
-    genres: PropTypes.array.isRequired,
-    dispatch: PropTypes.func.isRequired
-  };
 
   componentDidMount() {
     this.loadMovies();
@@ -75,4 +69,10 @@ const mapStateToProps = (state, ownProps) => {
   }
 };
 
+SearchMoviesPageContainer.propsTypes = {
+    ownProps: PropTypes.object.isRequired,
+    movies: PropTypes.object.isRequired,
+    genres: PropTypes.array.isRequired,
+    dispatch: PropTypes.func.isRequired
+};
 export default connect(mapStateToProps)(SearchMoviesPageContainer);

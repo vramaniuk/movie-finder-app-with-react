@@ -1,4 +1,5 @@
-import React, {Component, PropTypes} from 'react';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Dialog from 'material-ui/Dialog';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -8,11 +9,7 @@ import { logIn } from '../actions/userActions';
 
 class LoginModal extends Component {
 
-  static propTypes = {
-    isOpen: PropTypes.bool.isRequired,
-    closeModal: PropTypes.func.isRequired,
-    user: PropTypes.object.isRequired
-  };
+
 
   state = {
     email: '',
@@ -109,4 +106,9 @@ const mapStateToProps = (state) => {
   };
 };
 
+LoginModal.propTypes = {
+    isOpen: PropTypes.bool.isRequired,
+    closeModal: PropTypes.func.isRequired,
+    user: PropTypes.object.isRequired
+};
 export default connect(mapStateToProps)(LoginModal);

@@ -1,4 +1,5 @@
-import React, {Component, PropTypes} from 'react';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import AppBar from 'material-ui/AppBar';
@@ -20,10 +21,7 @@ import LoginModal from '../containers/LoginModal';
 
 class Navbar extends Component {
 
-  static propTypes = {
-    dispatch: PropTypes.func.isRequired,
-    user: PropTypes.object.isRequired
-  };
+
 
   static contextTypes = {
     router: PropTypes.object.isRequired
@@ -120,5 +118,8 @@ const mapStateToProps = (state) => {
     user: state.user
   };
 };
-
+Navbar.propTypes = {
+    dispatch: PropTypes.func.isRequired,
+    user: PropTypes.object.isRequired
+};
 export default connect(mapStateToProps)(Navbar);

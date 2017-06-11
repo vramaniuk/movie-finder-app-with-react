@@ -1,14 +1,10 @@
-import React, {Component, PropTypes} from 'react';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
 import MoviesList from '../components/MoviesList';
 
 class FavoriteMoviesPageContainer extends Component {
-
-  static propsTypes = {
-    user: PropTypes.object.isRequired,
-    genres: PropTypes.array.isRequired
-  };
 
   render() {
     const movies = {
@@ -37,4 +33,8 @@ class FavoriteMoviesPageContainer extends Component {
 
 const mapStateToProps = state => ({ user: state.user, genres: state.genres });
 
+FavoriteMoviesPageContainer.propsTypes = {
+    user: PropTypes.object.isRequired,
+    genres: PropTypes.array.isRequired
+};
 export default connect(mapStateToProps)(FavoriteMoviesPageContainer);

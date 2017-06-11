@@ -1,4 +1,5 @@
-import React, {Component, PropTypes} from 'react';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { clearMovies, getPopularMovies } from '../actions/moviesActions';
@@ -7,11 +8,7 @@ import MoviesList from '../components/MoviesList';
 
 class PopularMoviesPageContainer extends Component {
 
-  static propTypes = {
-    movies: PropTypes.object.isRequired,
-    genres: PropTypes.array.isRequired,
-    dispatch: PropTypes.func.isRequired
-  };
+
 
   componentDidMount() {
     this.props.dispatch(getPopularMovies());
@@ -49,5 +46,9 @@ const mapStateToProps = (state, ownProps) => {
     ownProps
   }
 };
-
+PopularMoviesPageContainer.propTypes = {
+    movies: PropTypes.object.isRequired,
+    genres: PropTypes.array.isRequired,
+    dispatch: PropTypes.func.isRequired
+};
 export default connect(mapStateToProps)(PopularMoviesPageContainer);

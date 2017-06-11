@@ -1,4 +1,5 @@
-import React, {Component, PropTypes} from 'react';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
 import {addMovieToFavorite, removeMovieFromFavorite} from '../actions/movieActions';
@@ -8,12 +9,7 @@ import MoviesItem from '../components/MoviesItem';
 
 class MoviesItemContainer extends Component {
 
-  static propTypes = {
-    dispatch: PropTypes.func.isRequired,
-    user: PropTypes.object,
-    movie: PropTypes.object.isRequired,
-    genres: PropTypes.array.isRequired
-  };
+
 
   isFavoriteMovie = () => {
     const { user, movie } = this.props;
@@ -49,4 +45,10 @@ class MoviesItemContainer extends Component {
 
 const mapStateToProps = state => ({ user: state.user });
 
+MoviesItemContainer.propTypes = {
+    dispatch: PropTypes.func.isRequired,
+    user: PropTypes.object,
+    movie: PropTypes.object.isRequired,
+    genres: PropTypes.array.isRequired
+};
 export default connect(mapStateToProps)(MoviesItemContainer);

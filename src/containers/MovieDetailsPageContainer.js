@@ -1,4 +1,5 @@
-import React, {Component, PropTypes} from 'react';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import CircularProgress from 'material-ui/CircularProgress';
 
@@ -8,13 +9,7 @@ import MovieDetailsPage from '../components/MovieDetailsPage';
 
 class MovieDetailsPageContainer extends Component {
 
-  static propTypes = {
-    dispatch: PropTypes.func.isRequired,
-    genres: PropTypes.array.isRequired,
-    user: PropTypes.object.isRequired,
-    movie: PropTypes.object.isRequired,
-    ownProps: PropTypes.object.isRequired,
-  };
+
 
   componentDidMount() {
     const movieId = this.props.ownProps.params.id;
@@ -82,4 +77,11 @@ class MovieDetailsPageContainer extends Component {
 
 const mapStateToProps = (state, ownProps) => ({user: state.user, genres: state.genres, movie: state.movie, ownProps});
 
+MovieDetailsPageContainer.propTypes = {
+    dispatch: PropTypes.func.isRequired,
+    genres: PropTypes.array.isRequired,
+    user: PropTypes.object.isRequired,
+    movie: PropTypes.object.isRequired,
+    ownProps: PropTypes.object.isRequired,
+};
 export default connect(mapStateToProps)(MovieDetailsPageContainer);
