@@ -38,6 +38,7 @@
 
 .MovieDetails__title {
     margin: 0;
+    box-shadow: none !important;
 }
 
 .MovieDetails__genres {
@@ -47,7 +48,6 @@
 .MovieDetails__title small {
     font-weight: 300;
     color: grey;
-    box-shadow: 5px 5px 5px grey;
 }
 
 .Favorites-container {
