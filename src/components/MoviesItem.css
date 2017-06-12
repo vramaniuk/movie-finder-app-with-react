@@ -3,6 +3,7 @@
     height: auto;
     margin: 10px;
     align-self: flex-start;
+    box-shadow: 5px 5px 5px grey !important;
 }
 
 .CardTitle {
