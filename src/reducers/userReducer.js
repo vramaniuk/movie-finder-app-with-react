@@ -1,13 +1,13 @@
 const initialState = {
-  isLoggedIn: false
+  isLoggedIn: false,
 };
 
 const user = (state = {}, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case 'FILL_USER':
-      return {...action.payload};
+      return { ...action.payload };
     case 'CLEAR_USER':
-      return {...initialState, error: action.error};
+      return { ...initialState, error: action.error };
     default:
       return state;
   }

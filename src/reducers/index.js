@@ -11,7 +11,7 @@ const rootReducer = combineReducers({
   movie,
   genres,
   user,
-  routing: routerReducer
+  routing: routerReducer,
 });
 
 export default rootReducer;

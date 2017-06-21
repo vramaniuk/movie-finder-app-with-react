@@ -2,7 +2,7 @@ const initialState = {
   page: '',
   moviesList: [],
   total_pages: '',
-  total_results: ''
+  total_results: '',
 };
 
 const movies = (movies = initialState, action) => {
@@ -12,18 +12,18 @@ const movies = (movies = initialState, action) => {
         page: action.payload.data.page,
         moviesList: [
           ...movies.moviesList,
-          ...action.payload.data.results
+          ...action.payload.data.results,
         ],
         total_pages: action.payload.data.total_pages,
-        total_results: action.payload.data.total_results
+        total_results: action.payload.data.total_results,
       };
     case 'GET_MOVIES_FAIL':
       return {
         error: action.payload.error,
-        errorStatus: action.payload.status
+        errorStatus: action.payload.status,
       };
     case 'CLEAR_MOVIES':
-      return {...initialState};
+      return { ...initialState };
     default:
       return movies;
   }

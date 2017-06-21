@@ -6,8 +6,7 @@ import { MuiThemeProvider } from 'material-ui';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import { cyan700 } from 'material-ui/styles/colors';
 import injectTapEventPlugin from 'react-tap-event-plugin';
-
-import { getGenres } from './actions/genresActions';
+import {getGenres} from './actions/genresActions';
 import { firebaseStateObserver } from './actions/userActions';
 import './App.css';
 
@@ -52,7 +51,7 @@ class App extends Component {
             { this.props.children }
           </div>
           <div className="App__footer">
-            <Footer />
+            <Footer prov="ppp" />
           </div>
         </div>
       </MuiThemeProvider>

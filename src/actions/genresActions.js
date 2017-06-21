@@ -1,18 +1,18 @@
 import { apiKey } from '../config/theMovieDBConfig';
 import axios from 'axios';
 
-export const getGenres = () => dispatch => {
+export const getGenres = () => (dispatch) => {
   axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKey}&language=en-US`)
-      .then(data => {
+      .then((data) => {
         dispatch({
           type: 'GET_GENRES_SUCCESS',
-          payload: data
+          payload: data,
         });
       })
-      .catch(e => {
+      .catch((e) => {
         dispatch({
           type: 'GET_GENRES_FAIL',
-          payload: e
-        })
+          payload: e,
+        });
       });
 };
