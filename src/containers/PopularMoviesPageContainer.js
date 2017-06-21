@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
@@ -7,7 +7,6 @@ import { clearMovies, getPopularMovies } from '../actions/moviesActions';
 import MoviesList from '../components/MoviesList';
 
 class PopularMoviesPageContainer extends Component {
-
 
 
   componentDidMount() {
@@ -29,26 +28,25 @@ class PopularMoviesPageContainer extends Component {
 
   render() {
     return (
-        <MoviesList callback={getPopularMovies}
-                    loadMore={this.loadMore}
-                    movies={this.props.movies}
-                    genres={this.props.genres}
-                    title="Popular Movies"
-        />
+      <MoviesList
+        callback={getPopularMovies}
+        loadMore={this.loadMore}
+        movies={this.props.movies}
+        genres={this.props.genres}
+        title="Popular Movies"
+      />
     );
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
-  return {
-    movies: state.movies,
-    genres: state.genres,
-    ownProps
-  }
-};
+const mapStateToProps = (state, ownProps) => ({
+  movies: state.movies,
+  genres: state.genres,
+  ownProps,
+});
 PopularMoviesPageContainer.propTypes = {
-    movies: PropTypes.object.isRequired,
-    genres: PropTypes.array.isRequired,
-    dispatch: PropTypes.func.isRequired
+  movies: PropTypes.object.isRequired,
+  genres: PropTypes.array.isRequired,
+  dispatch: PropTypes.func.isRequired,
 };
 export default connect(mapStateToProps)(PopularMoviesPageContainer);

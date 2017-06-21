@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import * as firebase from 'firebase';
 import { syncHistoryWithStore } from 'react-router-redux';
 
-import routes from './routes';
+import routes from './routes/index';
 import store from './store';
 
 import './index.css';
@@ -17,8 +17,8 @@ firebase.initializeApp(firebaseConfig);
 const history = syncHistoryWithStore(browserHistory, store);
 
 ReactDOM.render(
-    <Provider store={store}>
-        <Router routes={routes} history={history} />
-    </Provider>,
-    document.querySelector('#app')
+  <Provider store={store}>
+    <Router routes={routes} history={history} />
+  </Provider>,
+    document.querySelector('#app'),
 );
