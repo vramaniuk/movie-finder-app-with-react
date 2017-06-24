@@ -4,30 +4,31 @@ import PropTypes from 'prop-types';
 import MoviesList from './MoviesList';
 
 class FavoriteMoviesPage extends Component {
-    renderNoFavoriteMovies() {
+   renderNoFavoriteMovies =()=> {
         return (
             <div style={{ textAlign: 'center', marginTop: '20px' }}>There is no favorite movies.</div>
         );
-    }
+    };
     render() {
+        const { user, genres }=this.props;
         const movies = {
-            moviesList: this.props.user.favoriteMovies || [],
+            moviesList: user.favoriteMovies || [],
         };
 
-        if (!this.props.user.isLoggedIn) {
+        if (!user.isLoggedIn) {
             return (
                 <div style={{ textAlign: 'center', marginTop: '20px' }}>You have no permission for access to this page.</div>
             );
         }
 
-        if (!this.props.user.favoriteMovies.length) {
+        if (!user.favoriteMovies.length) {
             return this.renderNoFavoriteMovies();
         }
 
         return (
             <MoviesList
                 movies={movies}
-                genres={this.props.genres}
+                genres={genres}
                 title="Favorite Movies"
             />
         );
