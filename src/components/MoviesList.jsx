@@ -5,7 +5,7 @@ import Subheader from 'material-ui/Subheader';
 import { assembleGenres } from '../helpers/index';
 
 import LoadMoreButton from './LoadMoreButton';
-import MoviesItemContainer from '../containers/MoviesItemContainer';
+import MoviesItemContainer from './MoviesItemContainer';
 import './MoviesList.css';
 
 const MoviesList = ({ callback, movies, loadMore, genres, title }) => {

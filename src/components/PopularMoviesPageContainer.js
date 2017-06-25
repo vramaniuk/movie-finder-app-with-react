@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import { clearMovies, getPopularMovies } from '../actions/moviesActions';
 
-import MoviesList from '../components/MoviesList';
+import MoviesList from './MoviesList';
 
 class PopularMoviesPageContainer extends Component {
 

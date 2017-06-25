@@ -1,5 +1,5 @@
 import axios from 'axios';
-import  apiKey  from '../config/theMovieDBConfig';
+import apiKey from '../config/theMovieDBConfig';
 
 export const getPopularMovies = (page = 1) => (dispatch) => {
   axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=${page}`)

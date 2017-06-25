@@ -1,23 +1,25 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 import MoviesList from './MoviesList';
 
 class FavoriteMoviesPage extends Component {
-   renderNoFavoriteMovies =()=> {
+    renderNoFavoriteMovies = () => {
         return (
-            <div style={{ textAlign: 'center', marginTop: '20px' }}>There is no favorite movies.</div>
+            <div style= {{ textAlign: 'center', marginTop: '20px' }} >There is no favorite movies.</div>
         );
     };
     render() {
-        const { user, genres }=this.props;
+        const {user, genres} = this.props;
         const movies = {
             moviesList: user.favoriteMovies || [],
         };
 
         if (!user.isLoggedIn) {
             return (
-                <div style={{ textAlign: 'center', marginTop: '20px' }}>You have no permission for access to this page.</div>
+                <div style={{textAlign: 'center', marginTop: '20px'}}>You have no permission for access to this
+                    page.</div>
             );
         }
 
@@ -39,4 +41,6 @@ FavoriteMoviesPage.propTypes = {
     genres: PropTypes.array.isRequired,
 };
 
-export default FavoriteMoviesPage
+const mapStateToProps = state => ({ user: state.user, genres: state.genres });
+
+export default connect(mapStateToProps)(FavoriteMoviesPage);

@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 import Dialog from 'material-ui/Dialog';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
-import { createNewUser } from '../actions/userActions';
+import {createNewUser} from '../actions/userActions';
 
 class SignupModal extends Component {
 
@@ -41,6 +41,11 @@ class SignupModal extends Component {
     this.handleClose();
   }
 
+  onChangeHandler = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value,
+    });
+  };
   handleClose = () => {
     this.props.closeModal();
   };
@@ -59,12 +64,6 @@ class SignupModal extends Component {
         errorPassword: 'The password must match',
       });
     }
-  };
-
-  onChangeHandler = (event) => {
-    this.setState({
-      [event.target.name]: event.target.value,
-    });
   };
 
   render() {

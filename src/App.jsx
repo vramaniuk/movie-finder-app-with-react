@@ -10,8 +10,8 @@ import getGenres from './actions/genresActions';
 import { firebaseStateObserver } from './actions/userActions';
 import './App.css';
 
-import Navbar from './containers/Navbar';
-import SearchInput from './containers/SearchInput';
+import Navbar from './components/Navbar';
+import SearchInput from './components/SearchInput';
 import Footer from './components/Footer';
 
 injectTapEventPlugin();

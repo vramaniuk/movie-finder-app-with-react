@@ -16,8 +16,8 @@ import './Navbar.css';
 import { logoutFromFirebase } from '../actions/userActions';
 import { CodepenIcon, GithubIcon } from '../helpers/index';
 
-import SignupModal from '../containers/SignupModal';
-import LoginModal from '../containers/LoginModal';
+import SignupModal from './SignupModal';
+import LoginModal from '../components/LoginModal';
 
 class Navbar extends Component {
 
@@ -106,7 +106,9 @@ class Navbar extends Component {
             </div>
 
           }
-          iconElementRight={this.props.user.isLoggedIn ? this.renderLoggedMenu() : this.renderLoginSignupBtns()}
+          iconElementRight={
+            this.props.user.isLoggedIn ? this.renderLoggedMenu() : this.renderLoginSignupBtns()
+          }
         />
 
       </div>

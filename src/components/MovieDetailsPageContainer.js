@@ -10,7 +10,7 @@ import {
   removeMovieFromFavorite,
   getRecommendedMovies } from '../actions/movieActions';
 
-import MovieDetailsPage from '../components/MovieDetailsPage';
+import MovieDetailsPage from './MovieDetailsPage';
 
 class MovieDetailsPageContainer extends Component {
 
@@ -42,6 +42,7 @@ class MovieDetailsPageContainer extends Component {
     if (user.isLoggedIn) {
       return !!user.favoriteMovies.find(favoriteMovie => favoriteMovie.id === movie.id);
     }
+    return false;
   };
 
   addToFavorite = () => {

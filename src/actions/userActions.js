@@ -22,8 +22,8 @@ export const firebaseStateObserver = () => (dispatch) => {
         const resMovies = res.val();
         const favoriteMovies = [];
 
-        // eslint-disable-next-line
-        for (let objKey in resMovies) {
+
+        for (const objKey in resMovies) {
           resMovies[objKey].key = objKey;
           favoriteMovies.push(resMovies[objKey]);
         }

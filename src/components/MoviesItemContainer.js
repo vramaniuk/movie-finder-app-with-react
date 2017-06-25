@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import { addMovieToFavorite, removeMovieFromFavorite } from '../actions/movieActions';
 
-import MoviesItem from '../components/MoviesItem';
+import MoviesItem from './MoviesItem';
 
 
 class MoviesItemContainer extends Component {
@@ -15,6 +15,7 @@ class MoviesItemContainer extends Component {
     if (user.isLoggedIn) {
       return !!user.favoriteMovies.find(favoriteMovie => favoriteMovie.id === movie.id);
     }
+    return false;
   };
 
   addToFavorite = () => {
@@ -46,7 +47,7 @@ const mapStateToProps = state => ({ user: state.user });
 
 MoviesItemContainer.propTypes = {
   dispatch: PropTypes.func.isRequired,
-  user: PropTypes.object,
+  user: PropTypes.object.isRequired,
   movie: PropTypes.object.isRequired,
   genres: PropTypes.array.isRequired,
 };
