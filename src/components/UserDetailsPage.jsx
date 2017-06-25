@@ -1,6 +1,6 @@
 import React from 'react';
 
-const UserDetailsPage = props => (
+const UserDetailsPage = (props) => (
   <div className="UserDetailsPage" />
 );
 

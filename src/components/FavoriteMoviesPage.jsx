@@ -34,7 +34,7 @@ class FavoriteMoviesPage extends Component {
         );
     }
 }
-FavoriteMoviesPage.propsTypes = {
+FavoriteMoviesPage.propTypes = {
     user: PropTypes.object.isRequired,
     genres: PropTypes.array.isRequired,
 };

@@ -1,6 +1,7 @@
-import { apiKey } from '../config/theMovieDBConfig';
 import axios from 'axios';
 import firebase from 'firebase';
+
+import  apiKey  from '../config/theMovieDBConfig';
 
 export const getRecommendedMovies = movieId => (dispatch) => {
   axios.get(`https://api.themoviedb.org/3/movie/${movieId}/recommendations?api_key=${apiKey}&language=en-US&page=1`)

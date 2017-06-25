@@ -11,7 +11,6 @@ const RecommendedMovie = ({ movie }) => (
 
 const renderMovies = (movies) => {
   if (movies.length) {
-    // eslint-disable-next-line
     return movies.slice(0, 6).map(movie => (
       <Link to={`/movie/${movie.id}`} key={movie.id}><RecommendedMovie movie={movie} /></Link>
         ),
