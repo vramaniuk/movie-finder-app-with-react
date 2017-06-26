@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+
 import Dialog from 'material-ui/Dialog';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
@@ -8,7 +9,6 @@ import TextField from 'material-ui/TextField';
 import { logIn } from '../actions/userActions';
 
 class LoginModal extends Component {
-
 
   state = {
     email: '',

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import AppBar from 'material-ui/AppBar';
 import IconButton from 'material-ui/IconButton';
@@ -16,8 +15,8 @@ import './Navbar.css';
 import { logoutFromFirebase } from '../actions/userActions';
 import { CodepenIcon, GithubIcon } from '../helpers/index';
 
-import SignupModal from './SignupModal';
-import LoginModal from '../components/LoginModal';
+import SignupModal from '../containers/SignupModalContainer';
+import LoginModal from './LoginModal';
 
 class Navbar extends Component {
 
@@ -116,11 +115,9 @@ class Navbar extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  user: state.user,
-});
 Navbar.propTypes = {
   dispatch: PropTypes.func.isRequired,
   user: PropTypes.object.isRequired,
 };
-export default connect(mapStateToProps)(Navbar);
+
+export default Navbar;

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import { clearMovies, searchMovies } from '../actions/moviesActions';
 
-import MoviesList from './MoviesList';
+import MoviesList from '../components/MoviesList';
 
 class SearchMoviesPageContainer extends Component {
 
@@ -46,7 +46,8 @@ class SearchMoviesPageContainer extends Component {
 
   render() {
     if (!this.props.movies.moviesList.length) {
-      return <div style={{ textAlign: 'center', marginTop: '20px' }}>There is no movies for this search query.</div>;
+      return <div style={{ textAlign: 'center', marginTop: '20px' }}>There is no movies for this search
+        query.</div>;
     }
 
     return (

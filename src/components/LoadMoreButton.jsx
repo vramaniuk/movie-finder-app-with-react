@@ -3,8 +3,8 @@ import AddCircleOutline from 'material-ui/svg-icons/content/add-circle-outline';
 import RaisedButton from 'material-ui/RaisedButton';
 import './LoadMoreButton.css';
 
-const LoadMoreButton = ({ callback, page, total_pages, loadMore }) => {
-  if (page < total_pages) {
+const LoadMoreButton = ({ callback, page, totalPages, loadMore }) => {
+  if (page < totalPages) {
     return (<RaisedButton
       className="LoadMoreButton"
       icon={<AddCircleOutline />}

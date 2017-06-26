@@ -12,6 +12,7 @@
     "rules": {
       "linebreak-style": ["error", "windows"],
       "react/forbid-prop-types": ["error", { "forbid": [] }],
-      "react/prop-types": [0]
+      "react/prop-types": [0],
+      "indent": [0]
     }
 }

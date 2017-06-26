@@ -10,7 +10,7 @@ module.exports = {
     filename: 'bundle.js',
     publicPath: '/'
   },
-  devtool: !isProduction && 'cheap-inline-module-source-map',
+  devtool: !isProduction && 'source-map',
   devServer: {
     port: 9002,
     historyApiFallback: true,

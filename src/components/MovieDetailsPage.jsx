@@ -14,46 +14,46 @@ const MovieDetailsPage = ({ movie, isLoggedIn, isFavorite, addMovieToFavorite, r
     <div className="MovieDetails">
       <div className="MovieDetails__image-container">
         {
-                    movie.backdrop_path ?
-                      <Paper zDepth={3} className="MovieDetails__image-Paper" rounded={false}>
-                        <img
-                          src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2${movie.backdrop_path}`}
-                          alt={movie.original_title}
-                          className="MovieDetails__image"
-                        />
-                      </Paper>
-                        :
-                      <Paper zDepth={3} className="MovieDetails__image-Paper--none" rounded={false} />
-                }
+          movie.backdrop_path ?
+            <Paper zDepth={3} className="MovieDetails__image-Paper" rounded={false}>
+              <img
+                src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2${movie.backdrop_path}`}
+                alt={movie.original_title}
+                className="MovieDetails__image"
+              />
+            </Paper>
+            :
+            <Paper zDepth={3} className="MovieDetails__image-Paper--none" rounded={false} />
+        }
       </div>
       <div className="MovieDetails__info-container">
         <div className="info__title-container">
           <h1 className="MovieDetails__title">{movie.original_title}
             <small>({
-                            new Date(movie.release_date).getFullYear()
-                        })
-                        </small>
+              new Date(movie.release_date).getFullYear()
+            })
+            </small>
           </h1>
           <div className="MovieDetails__genres">{renderGenres(movie.genres, genres)}</div>
           { movie.tagline && <p className="MovieDetails__tagline"><b>Tagline:</b> {movie.tagline}</p> }
           { movie.production_countries.length && <p className="MovieDetails__countries">{
-                        renderCountries(movie.production_countries)
-                    }</p> }
+            renderCountries(movie.production_countries)
+          }</p> }
           {
-                        isLoggedIn &&
-                        <div className="Favorites-container">
-                            {
-                                isFavorite ?
-                                  <IconButton tooltip="Remove from favorites" onClick={removeMovieFromFavorite}>
-                                    <Favorite color="red" />
-                                  </IconButton>
-                                    :
-                                  <IconButton tooltip="Add to favorites" onClick={addMovieToFavorite}>
-                                    <FavoriteBorder color="red" />
-                                  </IconButton>
-                            }
-                        </div>
-                    }
+            isLoggedIn &&
+            <div className="Favorites-container">
+              {
+                isFavorite ?
+                  <IconButton tooltip="Remove from favorites" onClick={removeMovieFromFavorite}>
+                    <Favorite color="red" />
+                  </IconButton>
+                  :
+                  <IconButton tooltip="Add to favorites" onClick={addMovieToFavorite}>
+                    <FavoriteBorder color="red" />
+                  </IconButton>
+              }
+            </div>
+          }
         </div>
         <div className="MovieDetails__short-info">
           <div className="info__item info__rating"><b>Rating:</b> {movie.vote_average}</div>

@@ -10,7 +10,7 @@ import getGenres from './actions/genresActions';
 import { firebaseStateObserver } from './actions/userActions';
 import './App.css';
 
-import Navbar from './components/Navbar';
+import NavbarContainer from './containers/NavbarContainer';
 import SearchInput from './components/SearchInput';
 import Footer from './components/Footer';
 
@@ -41,7 +41,7 @@ class App extends Component {
       <MuiThemeProvider muiTheme={getMuiTheme(muiTheme)}>
         <div className="App">
           <div className="App__header">
-            <Navbar />
+            <NavbarContainer />
           </div>
           <div className="App__content">
             <SearchInput
@@ -51,7 +51,7 @@ class App extends Component {
             { this.props.children }
           </div>
           <div className="App__footer">
-            <Footer prov="ppp" />
+            <Footer />
           </div>
         </div>
       </MuiThemeProvider>

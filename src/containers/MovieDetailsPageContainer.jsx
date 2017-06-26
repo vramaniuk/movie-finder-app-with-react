@@ -10,7 +10,7 @@ import {
   removeMovieFromFavorite,
   getRecommendedMovies } from '../actions/movieActions';
 
-import MovieDetailsPage from './MovieDetailsPage';
+import MovieDetailsPage from '../components/MovieDetailsPage';
 
 class MovieDetailsPageContainer extends Component {
 
