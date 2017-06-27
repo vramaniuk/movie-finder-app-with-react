@@ -11,10 +11,8 @@ import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 
 import logo from '../images/logo_408x161.png';
 import './Navbar.css';
-
 import { logoutFromFirebase } from '../actions/userActions';
 import { CodepenIcon, GithubIcon } from '../helpers/index';
-
 import SignupModal from '../containers/SignupModalContainer';
 import LoginModal from './LoginModal';
 
@@ -50,7 +48,7 @@ class Navbar extends Component {
     this.props.dispatch(logoutFromFirebase());
   };
 
-  renderLoggedMenu(props) {
+  renderLoggedMenu=(props)=> {
     return (
       <div>
         <span style={{ position: 'relative', top: '-6px' }}>Hi, { this.props.user.email }</span>
@@ -65,7 +63,7 @@ class Navbar extends Component {
         </IconMenu>
       </div>
     );
-  }
+  };
 
   renderLoginSignupBtns = () => (
     <div style={{ marginTop: '6px' }}>

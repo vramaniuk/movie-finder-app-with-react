@@ -37,7 +37,7 @@ export const firebaseStateObserver = () => (dispatch) => {
   });
 };
 
-export const logoutFromFirebase = () => (dispatch) => {
+export const logoutFromFirebase = () => () => {
   firebase.auth().signOut();
 };
 

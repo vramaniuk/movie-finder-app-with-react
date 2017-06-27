@@ -12,7 +12,19 @@
     "rules": {
       "linebreak-style": ["error", "windows"],
       "react/forbid-prop-types": ["error", { "forbid": [] }],
-      "react/prop-types": [0],
-      "indent": [0]
+      "react/prop-types": [1],
+      "indent": [0],
+      "no-debugger": 1,
+      "no-console": 0,
+      "new-cap": 1,
+      "strict": 1,
+      "no-underscore-dangle": 1,
+      "no-use-before-define": 1,
+      "eol-last": 0,
+      "quotes": [0, "single"],
+      "jsx-quotes": [0, "prefer-single"],
+      "react/jsx-no-undef": 1,
+      "react/jsx-uses-react": 1,
+      "react/jsx-uses-vars": 1
     }
 }

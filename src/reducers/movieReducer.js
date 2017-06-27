@@ -3,10 +3,10 @@ const initialState = {
   recommendedMovies: [],
 };
 
-const movie = (movie = initialState, action) => {
+const movie = (film = initialState, action) => {
   switch (action.type) {
     case 'GET_MOVIE_SUCCESS':
-      return { ...movie, ...action.payload.data, isLoaded: true };
+      return { ...film, ...action.payload.data, isLoaded: true };
     case 'GET_MOVIE_FAIL':
       return {
         error: action.payload.response.data.status_message,
@@ -15,20 +15,20 @@ const movie = (movie = initialState, action) => {
       return { ...initialState };
     case 'GET_RECOMMENDED_MOVIE_SUCCESS':
       return {
-        ...movie,
+        ...film,
         recommendedMovies: [
           ...action.payload.data.results,
         ],
       };
     case 'GET_RECOMMENDED_MOVIE_FAIL':
       return {
-        ...movie,
+        ...film,
         recommendedMovies: {
           error: action.payload,
         },
       };
     default:
-      return movie;
+      return film;
   }
 };
 

@@ -41,13 +41,13 @@ export const clearMovie = () => (dispatch) => {
   dispatch({ type: 'CLEAR_MOVIE' });
 };
 
-export const addMovieToFavorite = (movieId, userId) => (dispatch) => {
+export const addMovieToFavorite = (movieId, userId) => () => {
   axios.get(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&language=en-US`)
       .then((data) => {
         firebase.database().ref(`users/${userId}/favoriteMovies/${movieId}`).set({ ...data.data });
       });
 };
 
-export const removeMovieFromFavorite = (movieId, userId) => (dispatch) => {
+export const removeMovieFromFavorite = (movieId, userId) => () => {
   firebase.database().ref(`users/${userId}/favoriteMovies/${movieId}`).remove();
 };

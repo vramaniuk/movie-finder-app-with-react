@@ -48,7 +48,6 @@ class LoginModal extends Component {
   };
   login = (event) => {
     event.preventDefault();
-
     const { email, password } = this.state;
     const user = { email, password };
     this.props.dispatch(logIn(user));

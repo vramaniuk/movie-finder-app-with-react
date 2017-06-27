@@ -5,13 +5,13 @@ const initialState = {
   total_results: '',
 };
 
-const movies = (movies = initialState, action) => {
+const movies = (films = initialState, action) => {
   switch (action.type) {
     case 'GET_MOVIES_SUCCESS':
       return {
         page: action.payload.data.page,
         moviesList: [
-          ...movies.moviesList,
+          ...films.moviesList,
           ...action.payload.data.results,
         ],
         total_pages: action.payload.data.total_pages,
@@ -25,7 +25,7 @@ const movies = (movies = initialState, action) => {
     case 'CLEAR_MOVIES':
       return { ...initialState };
     default:
-      return movies;
+      return films;
   }
 };
 
