@@ -19,9 +19,9 @@ import LoginModal from './LoginModal';
 class Navbar extends Component {
 
 
-  static contextTypes = {
-    router: PropTypes.object.isRequired,
-  };
+  // static contextTypes = {
+  //   router: PropTypes.object.isRequired,
+  // };
 
   state = {
     isLoginModalOpen: false,
@@ -48,7 +48,7 @@ class Navbar extends Component {
     this.props.dispatch(logoutFromFirebase());
   };
 
-  renderLoggedMenu=(props)=> {
+  renderLoggedMenu=(props) => {
     return (
       <div>
         <span style={{ position: 'relative', top: '-6px' }}>Hi, { this.props.user.email }</span>
@@ -118,4 +118,7 @@ Navbar.propTypes = {
   user: PropTypes.object.isRequired,
 };
 
+Navbar.contextTypes = {
+  router: PropTypes.object.isRequired,
+};
 export default Navbar;

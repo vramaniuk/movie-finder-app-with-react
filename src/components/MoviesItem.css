@@ -3,9 +3,12 @@
     height: auto;
     margin: 10px;
     align-self: flex-start;
-    box-shadow: 5px 5px 5px grey !important
+    box-shadow: 2px 2px 2px grey !important
 }
 
+.MoviesItem:hover {
+    box-shadow: 5px 5px 5px grey !important
+}
 .CardTitle {
     padding: 4px 16px 16px !important;
 }

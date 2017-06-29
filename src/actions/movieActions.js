@@ -3,7 +3,7 @@ import firebase from 'firebase';
 
 import apiKey from '../config/theMovieDBConfig';
 
-export const getRecommendedMovies = movieId => (dispatch) => {
+export const getRecommendedMovies = (movieId) => (dispatch) => {
   axios.get(`https://api.themoviedb.org/3/movie/${movieId}/recommendations?api_key=${apiKey}&language=en-US&page=1`)
       .then((data) => {
         dispatch({
@@ -20,7 +20,7 @@ export const getRecommendedMovies = movieId => (dispatch) => {
       });
 };
 
-export const getMovie = movieId => (dispatch) => {
+export const getMovie = (movieId) => (dispatch) => {
   axios.get(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&language=en-US`)
       .then((data) => {
         dispatch({

@@ -64,5 +64,6 @@ const mapStateToProps = (state, ownProps) => ({ ownProps });
 App.propTypes = {
   ownProps: PropTypes.object.isRequired,
   dispatch: PropTypes.func.isRequired,
+  children: PropTypes.object.isRequired,
 };
 export default connect(mapStateToProps)(App);

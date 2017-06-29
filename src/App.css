@@ -19,7 +19,6 @@ body {
 }
 
 .App__content {
-    min-height: calc(100vh - 142.5px);
     max-width: 960px;
     margin: 0 auto;
     padding: 10px;
