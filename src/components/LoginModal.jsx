@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 
 import Dialog from 'material-ui/Dialog';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -95,13 +94,10 @@ class LoginModal extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  user: state.user,
-});
-
 LoginModal.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   closeModal: PropTypes.func.isRequired,
   user: PropTypes.object.isRequired,
 };
-export default connect(mapStateToProps)(LoginModal);
+
+export default LoginModal;

@@ -12,7 +12,7 @@ module.exports = {
   },
   devtool: !isProduction && 'source-map',
   devServer: {
-    port: 9002,
+    port: 9001,
     historyApiFallback: true,
     contentBase: __dirname + '/src'
   },

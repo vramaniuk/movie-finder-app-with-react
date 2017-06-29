@@ -14,7 +14,7 @@ import './Navbar.css';
 import { logoutFromFirebase } from '../actions/userActions';
 import { CodepenIcon, GithubIcon } from '../helpers/index';
 import SignupModal from '../containers/SignupModalContainer';
-import LoginModal from './LoginModal';
+import LoginModal from '../containers/LoginModalContainer';
 
 class Navbar extends Component {
 
