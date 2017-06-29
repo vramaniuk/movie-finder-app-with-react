@@ -7,15 +7,20 @@
 }
 
 .MoviesItem:hover {
-    box-shadow: 5px 5px 5px grey !important
+    box-shadow: 5px 5px 5px grey !important;
 }
+
+.MoviesItem:hover img {
+    filter: brightness(80%);
+}
+
 .CardTitle {
     padding: 4px 16px 16px !important;
 }
 
 .CardTitle > span:nth-child(1) {
     font-size: 18px !important;
-    line-height: 27px!important;
+    line-height: 27px !important;
     max-width: 330px;
 }
 
