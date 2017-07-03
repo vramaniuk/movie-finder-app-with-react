@@ -48,7 +48,7 @@ class Navbar extends Component {
     this.props.dispatch(logoutFromFirebase());
   };
 
-  renderLoggedMenu=(props) => {
+  renderLoggedMenu = (props) => {
     return (
       <div>
         <span style={{ position: 'relative', top: '-6px' }}>Hi, { this.props.user.email }</span>
@@ -58,7 +58,10 @@ class Navbar extends Component {
           targetOrigin={{ horizontal: 'right', vertical: 'top' }}
           anchorOrigin={{ horizontal: 'right', vertical: 'top' }}
         >
-          <MenuItem onTouchTap={() => this.context.router.push('/favorites')} primaryText="Favorite Movies" />
+          <MenuItem
+            onTouchTap={() => this.context.router.push('/favorites')}
+            primaryText="Favorite Movies"
+          />
           <MenuItem primaryText="Log out" onTouchTap={this.logout} />
         </IconMenu>
       </div>
@@ -67,10 +70,24 @@ class Navbar extends Component {
 
   renderLoginSignupBtns = () => (
     <div style={{ marginTop: '6px' }}>
-      <RaisedButton label="Login" onClick={this.openLoginModal} style={{ marginRight: '10px' }} />
-      <RaisedButton label="Signup" secondary onClick={this.openSignupModal} />
-      <SignupModal isOpen={this.state.isSignupModalOpen} closeModal={this.closeSignupModal} />
-      <LoginModal isOpen={this.state.isLoginModalOpen} closeModal={this.closeLoginModal} />
+      <RaisedButton
+        label="Login"
+        onClick={this.openLoginModal}
+        style={{ marginRight: '10px' }}
+      />
+      <RaisedButton
+        label="Signup"
+        secondary
+        onClick={this.openSignupModal}
+      />
+      <SignupModal
+        isOpen={this.state.isSignupModalOpen}
+        closeModal={this.closeSignupModal}
+      />
+      <LoginModal
+        isOpen={this.state.isLoginModalOpen}
+        closeModal={this.closeLoginModal}
+      />
     </div>
   );
 
@@ -81,7 +98,12 @@ class Navbar extends Component {
           className="Navbar__appbar"
           iconElementLeft={
             <Link to="/">
-              <img src={logo} className="App-logo" alt="logo" style={{ width: '100px', marginTop: '6px' }} />
+              <img
+                src={logo}
+                className="App-logo"
+                alt="logo"
+                style={{ width: '100px', marginTop: '6px' }}
+              />
             </Link>
           }
           title={

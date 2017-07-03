@@ -13,7 +13,7 @@ class MoviesItemContainer extends Component {
   isFavoriteMovie = () => {
     const { user, movie } = this.props;
     if (user.isLoggedIn) {
-      return !!user.favoriteMovies.find(favoriteMovie => favoriteMovie.id === movie.id);
+      return !!user.favoriteMovies.find((favoriteMovie) => favoriteMovie.id === movie.id);
     }
     return false;
   };
@@ -43,7 +43,7 @@ class MoviesItemContainer extends Component {
   }
 }
 
-const mapStateToProps = state => ({ user: state.user });
+const mapStateToProps = (state) => ({ user: state.user });
 
 MoviesItemContainer.propTypes = {
   dispatch: PropTypes.func.isRequired,

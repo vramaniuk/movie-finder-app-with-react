@@ -19,8 +19,7 @@ const MoviesList = ({ callback, movies, loadMore, genres, title }) => {
     <div className="MoviesList">
       <Subheader className="PageHeader">{title}</Subheader>
       <div className="MoviesGrid">
-        {
-            movies.moviesList.map(movie =>
+        {movies.moviesList.map((movie) =>
               (<MoviesItemContainer
                 key={movie.id}
                 movie={movie}
@@ -33,8 +32,8 @@ const MoviesList = ({ callback, movies, loadMore, genres, title }) => {
           loadMore &&
           <LoadMoreButton
             callback={callback}
-            page={movies.page}
-            totalPages={movies.total_pages}
+            page={Number(movies.page)}
+            totalPages={Number(movies.total_pages)}
             loadMore={loadMore}
           />
         }

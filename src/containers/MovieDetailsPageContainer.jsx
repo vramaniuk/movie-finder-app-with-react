@@ -40,7 +40,7 @@ class MovieDetailsPageContainer extends Component {
   isFavoriteMovie = () => {
     const { user, movie } = this.props;
     if (user.isLoggedIn) {
-      return !!user.favoriteMovies.find(favoriteMovie => favoriteMovie.id === movie.id);
+      return !!user.favoriteMovies.find((favoriteMovie) => favoriteMovie.id === movie.id);
     }
     return false;
   };

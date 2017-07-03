@@ -38,7 +38,7 @@ class SearchMoviesPageContainer extends Component {
     const { page, total_pages } = this.props.movies;
     const searchText = this.props.ownProps.location.query.query;
 
-    if (page < total_pages) {
+    if (page < total_pages) { // eslint-disable-line camelcase
       const nextPage = page + 1;
       this.props.dispatch(callback(searchText, nextPage));
     }
@@ -46,8 +46,8 @@ class SearchMoviesPageContainer extends Component {
 
   render() {
     if (!this.props.movies.moviesList.length) {
-      return <div style={{ textAlign: 'center', marginTop: '20px' }}>There is no movies for this search
-        query.</div>;
+      return (<div style={{ textAlign: 'center', marginTop: '20px' }}>There is no movies for this search
+        query.</div>);
     }
 
     return (

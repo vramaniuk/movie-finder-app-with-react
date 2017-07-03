@@ -20,7 +20,7 @@ class PopularMoviesPageContainer extends Component {
   loadMore = (callback) => {
     const { page, total_pages } = this.props.movies;
 
-    if (page < total_pages) {
+    if (page < total_pages) { // eslint-disable-line camelcase
       const nextPage = page + 1;
       this.props.dispatch(callback(nextPage));
     }
