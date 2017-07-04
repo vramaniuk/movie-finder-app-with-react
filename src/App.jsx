@@ -30,7 +30,7 @@ class App extends Component {
   }
 
   handleSearchSubmit = (query) => {
-    event.preventDefault();
+    // event.preventDefault();
     if (query) {
       this.props.ownProps.router.push(`/search?query=${encodeURIComponent(query)}`);
     }

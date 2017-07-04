@@ -1,5 +1,4 @@
 import firebase from 'firebase';
-import { formatUserData } from '../helpers';
 
 export const createNewUser = ({ email, password }) => (dispatch) => {
   firebase.auth().createUserWithEmailAndPassword(email, password)
@@ -31,16 +30,19 @@ export const firebaseStateObserver = () => (dispatch) => {
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       firebase.database().ref(`users/${user.uid}/favoriteMovies`).on('value', (res) => {
-        const resMovies = res.val();
+        const resMoviesObj = res.val()||{};
         const favoriteMovies = [];
-        Object.keys(resMovies).forEach((objKey) => {
-          // resMovies[objKey].key = objKey;
-          favoriteMovies.push(resMovies[objKey]);
+        Object.keys(resMoviesObj).forEach((objKey) => {
+          favoriteMovies.push(resMoviesObj[objKey]);
         });
-        const userData = formatUserData(user, favoriteMovies);
         dispatch({
           type: 'FILL_USER',
-          payload: userData,
+          payload: {
+            isLoggedIn: true,
+            userId: user.uid,
+            email: user.email,
+            favoriteMovies,
+          },
         });
       });
     } else {
