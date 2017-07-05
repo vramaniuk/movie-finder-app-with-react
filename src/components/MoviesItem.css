@@ -14,6 +14,13 @@
     filter: brightness(80%);
 }
 
+.MoviesItem-no-image {
+    max-width: 500px;
+    height: 250px;
+    background-image: url(../images/image-not_500x250.jpg);
+    background-position: center;
+}
+
 .CardTitle {
     padding: 4px 16px 16px !important;
 }
