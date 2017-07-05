@@ -23,7 +23,7 @@
     width: 300px;
     height: 450px;
     margin: 0 auto;
-    background-color: grey!important;
+    background-image: url(../images/image-not_300x450.jpg)!important;
 }
 
 .MovieDetails__info-container {

@@ -2,14 +2,13 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { MuiThemeProvider } from 'material-ui';
-// import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme'
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import { cyan700 } from 'material-ui/styles/colors';
 import injectTapEventPlugin from 'react-tap-event-plugin';
+
 import getGenres from './actions/genresActions';
 import { firebaseStateObserver } from './actions/userActions';
 import './App.css';
-
 import NavbarContainer from './containers/NavbarContainer';
 import SearchInput from './components/SearchInput';
 import Footer from './components/Footer';
@@ -30,13 +29,12 @@ class App extends Component {
   }
 
   handleSearchSubmit = (query) => {
-    // event.preventDefault();
     if (query) {
       this.props.ownProps.router.push(`/search?query=${encodeURIComponent(query)}`);
     }
   };
 
-  render() {
+  render() {console.log(this.props.children);
     return (
       <MuiThemeProvider muiTheme={getMuiTheme(muiTheme)}>
         <div className="App">
