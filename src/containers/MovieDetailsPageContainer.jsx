@@ -73,19 +73,18 @@ class MovieDetailsPageContainer extends Component {
         isFavorite={this.isFavoriteMovie()}
         addMovieToFavorite={this.addToFavorite}
         removeMovieFromFavorite={this.removeFromFavorite}
-        genres={this.props.genres}
+
       />
     );
   }
 }
 
 const mapStateToProps = (state, ownProps) => (
-  { user: state.user, genres: state.genres, movie: state.movie, ownProps }
+  { user: state.user, movie: state.movie, ownProps }
   );
 
 MovieDetailsPageContainer.propTypes = {
   dispatch: PropTypes.func.isRequired,
-  genres: PropTypes.array.isRequired,
   user: PropTypes.object.isRequired,
   movie: PropTypes.object.isRequired,
   ownProps: PropTypes.object.isRequired,

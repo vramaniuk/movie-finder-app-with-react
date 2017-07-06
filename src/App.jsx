@@ -34,7 +34,7 @@ class App extends Component {
     }
   };
 
-  render() {console.log(this.props.children);
+  render() {
     return (
       <MuiThemeProvider muiTheme={getMuiTheme(muiTheme)}>
         <div className="App">
@@ -44,7 +44,7 @@ class App extends Component {
           <div className="App__content">
             <SearchInput
               onSubmit={this.handleSearchSubmit}
-              defaultValue={this.props.ownProps.location.query.query}
+              defaultValue={this.props.ownProps.location.query.query || ''}
             />
             { this.props.children }
           </div>

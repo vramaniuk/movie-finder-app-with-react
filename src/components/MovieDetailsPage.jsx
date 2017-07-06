@@ -5,13 +5,13 @@ import FavoriteBorder from 'material-ui/svg-icons/action/favorite-border';
 import Favorite from 'material-ui/svg-icons/action/favorite';
 import Paper from 'material-ui/Paper';
 
-import { renderGenres, renderCountries, formatMoney, formatDate } from '../helpers/index';
+import { renderCountries, formatMoney, formatDate } from '../helpers/index';
 
 import RecommendedMovies from './RecommendedMovies';
 import './MovieDetailsPage.css';
 
 const MovieDetailsPage =
-  ({ movie, isLoggedIn, isFavorite, addMovieToFavorite, removeMovieFromFavorite, genres }) => (
+  ({ movie, isLoggedIn, isFavorite, addMovieToFavorite, removeMovieFromFavorite }) => (
     <div className="MovieDetailsPage">
       <div className="MovieDetails">
         <div className="MovieDetails__image-container">
@@ -36,7 +36,11 @@ const MovieDetailsPage =
               })
               </small>
             </h1>
-            <div className="MovieDetails__genres">{renderGenres(movie.genres, genres)}</div>
+            <div
+              className="MovieDetails__genres"
+            >
+              {movie.genres.map((genre) => genre.name).join(', ')}
+            </div>
             { movie.tagline &&
             <p className="MovieDetails__tagline"><b>Tagline:</b> {movie.tagline}</p> }
             { movie.production_countries.length && <p className="MovieDetails__countries">{
@@ -90,7 +94,6 @@ MovieDetailsPage.propTypes = {
   isFavorite: PropTypes.bool.isRequired,
   addMovieToFavorite: PropTypes.func.isRequired,
   removeMovieFromFavorite: PropTypes.func.isRequired,
-  genres: PropTypes.array.isRequired,
 };
 
 export default MovieDetailsPage;

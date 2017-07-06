@@ -10,10 +10,6 @@ body {
     background-image: url("./images/house.png");
 }
 
-.root {
-    height: 100vh;
-}
-
 .App {
     height: 100vh;
 }
