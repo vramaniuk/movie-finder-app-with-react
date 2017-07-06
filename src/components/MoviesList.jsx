@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Subheader from 'material-ui/Subheader';
 
 import { assembleGenres } from '../helpers/index';
-
 import LoadMoreButton from './LoadMoreButton';
 import MoviesItemContainer from '../containers/MoviesItemContainer';
 import './MoviesList.css';

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router';
+
 import './RecommendedMovies.css';
 
 const RecommendedMovie = ({ movie }) => (
@@ -16,7 +17,15 @@ const RecommendedMovie = ({ movie }) => (
 
 const renderMovies = (movies) => {
   if (movies.length) {
-    return movies.slice(0, 6).map((movie) => (<Link to={`/movie/${movie.id}`} key={movie.id}><RecommendedMovie movie={movie} /></Link>
+    return movies.slice(0, 6).map((movie) => (
+        <Link
+          to={`/movie/${movie.id}`}
+          key={movie.id}
+        >
+          <RecommendedMovie
+            movie={movie}
+          />
+        </Link>
       ),
     );
   }

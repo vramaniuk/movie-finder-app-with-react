@@ -6,7 +6,6 @@ import Favorite from 'material-ui/svg-icons/action/favorite';
 import Paper from 'material-ui/Paper';
 
 import { renderCountries, formatMoney, formatDate } from '../helpers/index';
-
 import RecommendedMovies from './RecommendedMovies';
 import './MovieDetailsPage.css';
 

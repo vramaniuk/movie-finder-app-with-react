@@ -17,8 +17,6 @@ import SignupModal from '../containers/SignupModalContainer';
 import LoginModal from '../containers/LoginModalContainer';
 
 class Navbar extends Component {
-
-
   // static contextTypes = {
   //   router: PropTypes.object.isRequired,
   // };
@@ -92,6 +90,7 @@ class Navbar extends Component {
   );
 
   render() {
+    console.log(this.context);
     return (
       <div className="Navbar">
         <AppBar
@@ -138,6 +137,7 @@ class Navbar extends Component {
 Navbar.propTypes = {
   dispatch: PropTypes.func.isRequired,
   user: PropTypes.object.isRequired,
+  // ownProps: PropTypes.object.isRequired,
 };
 
 Navbar.contextTypes = {

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { addMovieToFavorite, removeMovieFromFavorite } from '../actions/movieActions';
-
 import MoviesItem from '../components/MoviesItem';
 
 
@@ -34,7 +33,7 @@ class MoviesItemContainer extends Component {
       <MoviesItem
         movie={movie}
         genres={genres}
-        logged={user.isLoggedIn}
+        logged={!!user.isLoggedIn}
         isFavorite={this.isFavoriteMovie()}
         addToFavorite={this.addToFavorite}
         removeFromFavorite={this.removeFromFavorite}

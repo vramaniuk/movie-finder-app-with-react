@@ -7,7 +7,6 @@ import { syncHistoryWithStore } from 'react-router-redux';
 
 import routes from './routes/index';
 import store from './store';
-import './index.css';
 import firebaseConfig from './config/firebaseConfig';
 
 firebase.initializeApp(firebaseConfig);

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { clearMovies, searchMovies } from '../actions/moviesActions';
-
 import MoviesList from '../components/MoviesList';
 
 class SearchMoviesPageContainer extends Component {

@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Dialog from 'material-ui/Dialog';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
+
 import { createNewUser } from '../actions/userActions';
 
 class SignupModal extends Component {
