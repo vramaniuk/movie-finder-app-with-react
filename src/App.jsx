@@ -37,7 +37,7 @@ class App extends Component {
   render() {
     return (
       <MuiThemeProvider muiTheme={getMuiTheme(muiTheme)}>
-        <div className="App">
+        <div>
           <div className="App__header">
             <NavbarContainer />
           </div>
