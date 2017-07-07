@@ -38,14 +38,18 @@ class PopularMoviesPageContainer extends Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => ({
-  movies: state.movies,
-  genres: state.genres,
-  ownProps,
-});
+const mapStateToProps = (state, ownProps) => {
+  return {
+    movies: state.movies,
+    genres: state.genres,
+    ownProps,
+  };
+};
+
 PopularMoviesPageContainer.propTypes = {
   movies: PropTypes.object.isRequired,
   genres: PropTypes.array.isRequired,
   dispatch: PropTypes.func.isRequired,
 };
+
 export default connect(mapStateToProps)(PopularMoviesPageContainer);

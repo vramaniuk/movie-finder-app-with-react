@@ -90,7 +90,6 @@ class Navbar extends Component {
   );
 
   render() {
-    console.log(this.context);
     return (
       <div className="Navbar">
         <AppBar
@@ -137,10 +136,10 @@ class Navbar extends Component {
 Navbar.propTypes = {
   dispatch: PropTypes.func.isRequired,
   user: PropTypes.object.isRequired,
-  // ownProps: PropTypes.object.isRequired,
 };
 
 Navbar.contextTypes = {
   router: PropTypes.object.isRequired,
 };
+
 export default Navbar;
