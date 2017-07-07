@@ -17,10 +17,6 @@ import SignupModal from '../containers/SignupModalContainer';
 import LoginModal from '../containers/LoginModalContainer';
 
 class Navbar extends Component {
-  // static contextTypes = {
-  //   router: PropTypes.object.isRequired,
-  // };
-
   state = {
     isLoginModalOpen: false,
     isSignupModalOpen: false,
