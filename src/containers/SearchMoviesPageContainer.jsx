@@ -52,7 +52,7 @@ class SearchMoviesPageContainer extends Component {
 
     return (
       <MoviesList
-        // callback={searchMovies}
+        callback={searchMovies}
         loadMore={this.loadMore}
         movies={this.props.movies}
         genres={this.props.genres}
