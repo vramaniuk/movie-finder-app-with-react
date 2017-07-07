@@ -3,11 +3,12 @@ import PropTypes from 'prop-types';
 import AddCircleOutline from 'material-ui/svg-icons/content/add-circle-outline';
 import RaisedButton from 'material-ui/RaisedButton';
 
+import { searchMovies } from '../actions/moviesActions';
 import './LoadMoreButton.css';
 
 
-const LoadMoreButton = ({ callback, page, totalPages, loadMore }) => {
-  const loadMoreBinded = loadMore.bind(null, callback);
+const LoadMoreButton = ({ page, totalPages, loadMore }) => {
+  const loadMoreBinded = loadMore.bind(null, searchMovies);
   if (page < totalPages) {
     return (<RaisedButton
       className="LoadMoreButton"
@@ -24,7 +25,6 @@ const LoadMoreButton = ({ callback, page, totalPages, loadMore }) => {
 };
 
 LoadMoreButton.propTypes = {
-  callback: PropTypes.func.isRequired,
   page: PropTypes.number.isRequired,
   totalPages: PropTypes.number.isRequired,
   loadMore: PropTypes.func.isRequired,

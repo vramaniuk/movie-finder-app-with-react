@@ -2,12 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Subheader from 'material-ui/Subheader';
 
+
 import { assembleGenres } from '../helpers/index';
 import LoadMoreButton from './LoadMoreButton';
 import MoviesItemContainer from '../containers/MoviesItemContainer';
 import './MoviesList.css';
 
-const MoviesList = ({ callback, movies, loadMore, genres, title }) => {
+const MoviesList = ({ movies, loadMore, genres, title }) => {
   if (movies.error) {
     return (
       <h2>{movies.error} <br />{movies.errorStatus}</h2>
@@ -30,7 +31,6 @@ const MoviesList = ({ callback, movies, loadMore, genres, title }) => {
       {
           loadMore &&
           <LoadMoreButton
-            callback={callback}
             page={Number(movies.page)}
             totalPages={Number(movies.total_pages)}
             loadMore={loadMore}

@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import { addMovieToFavorite, removeMovieFromFavorite } from '../actions/movieActions';
 import MoviesItem from '../components/MoviesItem';
 
-
 class MoviesItemContainer extends Component {
 
 
