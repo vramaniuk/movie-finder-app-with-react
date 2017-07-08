@@ -1,6 +1,9 @@
 import firebase from 'firebase';
 
 export const createNewUser = ({ email, password }) => (dispatch) => {
+  dispatch({
+    type: 'CREATE_NEW_USER',
+  });
   firebase.auth().createUserWithEmailAndPassword(email, password)
     .catch((error) => {
       dispatch({
@@ -14,6 +17,9 @@ export const createNewUser = ({ email, password }) => (dispatch) => {
 };
 
 export const logIn = ({ email, password }) => (dispatch) => {
+  dispatch({
+    type: 'LOGIN_USER',
+  });
   firebase.auth().signInWithEmailAndPassword(email, password)
     .catch((error) => {
       dispatch({
@@ -47,13 +53,16 @@ export const firebaseStateObserver = () => (dispatch) => {
       });
     } else {
       dispatch({
-        type: 'CLEAR_USER',
+        type: 'NOT_AUTHORIZED_USER',
       });
     }
   });
 };
 
-export const logoutFromFirebase = () => () => {
+export const logoutFromFirebase = () => (dispatch) => {
   firebase.auth().signOut();
+  dispatch({
+    type: 'LOGOUT_USER',
+  });
 };
 
