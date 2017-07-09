@@ -12,8 +12,8 @@ import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import logo from '../images/logo_408x161.png';
 import './Navbar.css';
 import { logoutFromFirebase } from '../actions/userActions';
-import GitHubIcon from '../Icons/GitHubIcon';
-import CodepenIcon from '../Icons/CodePenIcon';
+import GitHubIcon from '../icons/GitHubIcon';
+import CodepenIcon from '../icons/CodePenIcon';
 import SignupModal from '../containers/SignupModalContainer';
 import LoginModal from '../containers/LoginModalContainer';
 
@@ -43,12 +43,11 @@ class Navbar extends Component {
     this.props.dispatch(logoutFromFirebase());
   };
 
-  renderLoggedMenu = (props) => {
+  renderLoggedMenu = () => {
     return (
       <div>
         <span style={{ position: 'relative', top: '-6px' }}>Hi, { this.props.user.email }</span>
         <IconMenu
-          {...props}
           iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}
           targetOrigin={{ horizontal: 'right', vertical: 'top' }}
           anchorOrigin={{ horizontal: 'right', vertical: 'top' }}
