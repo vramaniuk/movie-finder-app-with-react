@@ -14,8 +14,8 @@ import './Navbar.css';
 import { logoutFromFirebase } from '../actions/userActions';
 import GitHubIcon from '../icons/GitHubIcon';
 import CodepenIcon from '../icons/CodePenIcon';
-import SignupModal from '../containers/SignupModalContainer';
-import LoginModal from '../containers/LoginModalContainer';
+import SignupModal from '../components/SignupModal';
+import LoginModal from '../components/LoginModal';
 
 class Navbar extends Component {
   state = {
@@ -77,10 +77,14 @@ class Navbar extends Component {
       <SignupModal
         isOpen={this.state.isSignupModalOpen}
         closeModal={this.closeSignupModal}
+        dispatch={this.props.dispatch}
+        user={this.props.user}
       />
       <LoginModal
         isOpen={this.state.isLoginModalOpen}
         closeModal={this.closeLoginModal}
+        dispatch={this.props.dispatch}
+        user={this.props.user}
       />
     </div>
   );
