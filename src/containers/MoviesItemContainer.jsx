@@ -6,8 +6,6 @@ import { addMovieToFavorite, removeMovieFromFavorite } from '../actions/movieAct
 import MoviesItem from '../components/MoviesItem';
 
 class MoviesItemContainer extends Component {
-
-
   isFavoriteMovie = () => {
     const { user, movie } = this.props;
     if (user.isLoggedIn) {

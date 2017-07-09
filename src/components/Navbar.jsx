@@ -12,7 +12,8 @@ import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import logo from '../images/logo_408x161.png';
 import './Navbar.css';
 import { logoutFromFirebase } from '../actions/userActions';
-import { CodepenIcon, GithubIcon } from '../helpers/index';
+import GitHubIcon from '../Icons/GitHubIcon';
+import CodepenIcon from '../Icons/CodePenIcon';
 import SignupModal from '../containers/SignupModalContainer';
 import LoginModal from '../containers/LoginModalContainer';
 
@@ -106,7 +107,7 @@ class Navbar extends Component {
                 label="Github"
                 href="https://github.com/vramaniuk/movie-finder-app-with-react"
                 target="_blank"
-                icon={<GithubIcon viewBox="0 0 20 20" />}
+                icon={<GitHubIcon viewBox="0 0 20 20" />}
                 labelStyle={{ top: '-2px', paddingLeft: '2px' }}
               />
               <FlatButton
@@ -132,6 +133,7 @@ class Navbar extends Component {
 Navbar.propTypes = {
   dispatch: PropTypes.func.isRequired,
   user: PropTypes.object.isRequired,
+  // router: PropTypes.object.isRequired,
 };
 
 Navbar.contextTypes = {

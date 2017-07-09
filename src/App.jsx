@@ -35,6 +35,7 @@ class App extends Component {
   };
 
   render() {
+    console.log(this.props);
     return (
       <MuiThemeProvider muiTheme={getMuiTheme(muiTheme)}>
         <div>
@@ -60,8 +61,9 @@ class App extends Component {
 const mapStateToProps = (state, ownProps) => ({ ownProps });
 
 App.propTypes = {
-  ownProps: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
   dispatch: PropTypes.func.isRequired,
   children: PropTypes.object.isRequired,
+  ownProps: PropTypes.object.isRequired,
 };
 export default connect(mapStateToProps)(App);

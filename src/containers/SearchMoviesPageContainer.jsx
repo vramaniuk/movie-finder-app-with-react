@@ -74,4 +74,5 @@ SearchMoviesPageContainer.propTypes = {
   genres: PropTypes.array.isRequired,
   dispatch: PropTypes.func.isRequired,
 };
+
 export default connect(mapStateToProps)(SearchMoviesPageContainer);

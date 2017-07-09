@@ -13,7 +13,6 @@ const MoviesList = ({ callback, movies, loadMore, genres, title }) => {
       <h2>{movies.error} <br />{movies.errorStatus}</h2>
     );
   }
-
   return (
     <div className="MoviesList">
       <Subheader className="PageHeader">{title}</Subheader>
@@ -27,22 +26,21 @@ const MoviesList = ({ callback, movies, loadMore, genres, title }) => {
         )
         }
       </div>
-      {
-        loadMore &&
-        <LoadMoreButton
-          callback={callback}
-          page={Number(movies.page)}
-          totalPages={Number(movies.total_pages)}
-          loadMore={loadMore}
-        />
-      }
+      <LoadMoreButton
+        callback={callback}
+        page={Number(movies.page)}
+        totalPages={Number(movies.total_pages)}
+        loadMore={loadMore}
+      />
     </div>
   );
 };
 
 MoviesList.defaultProps = {
-  callback: () => {},
-  loadMore: () => {},
+  callback: () => {
+  },
+  loadMore: () => {
+  },
 };
 
 MoviesList.propTypes = {
