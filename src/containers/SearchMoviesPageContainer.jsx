@@ -12,8 +12,8 @@ class SearchMoviesPageContainer extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const searchText = this.props.ownProps.location.query.query;
-    const newSearchText = nextProps.ownProps.location.query.query;
+    const searchText = this.props.ownProps.location.query.userQuery;
+    const newSearchText = nextProps.ownProps.location.query.userQuery;
     if (searchText !== newSearchText) {
       this.loadMovies(newSearchText);
     }
@@ -26,7 +26,7 @@ class SearchMoviesPageContainer extends Component {
   loadMovies = (newSearchText) => {
     this.props.dispatch(clearMovies());
 
-    const searchText = newSearchText || this.props.ownProps.location.query.query;
+    const searchText = newSearchText || this.props.ownProps.location.query.userQuery;
 
     if (searchText) {
       this.props.dispatch(searchMovies(searchText));
@@ -35,7 +35,7 @@ class SearchMoviesPageContainer extends Component {
 
   loadMore = (callback) => {
     const { page, total_pages } = this.props.movies;
-    const searchText = this.props.ownProps.location.query.query;
+    const searchText = this.props.ownProps.location.query.userQuery;
 
     if (page < total_pages) { // eslint-disable-line camelcase
       const nextPage = page + 1;

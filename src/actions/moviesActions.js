@@ -39,8 +39,7 @@ export const searchMovies = (query, page = 1) => (dispatch) => {
     });
 };
 
-export const clearMovies = () => (dispatch) => {
-  dispatch({
-    type: 'CLEAR_MOVIES',
-  });
-};
+export const clearMovies = () => ({
+  type: 'CLEAR_MOVIES',
+});
+

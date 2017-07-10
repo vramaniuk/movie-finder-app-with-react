@@ -56,7 +56,10 @@ class Navbar extends Component {
             onTouchTap={() => this.context.router.push('/favorites')}
             primaryText="Favorite Movies"
           />
-          <MenuItem primaryText="Log out" onTouchTap={this.logout} />
+          <MenuItem
+            primaryText="Log out"
+            onTouchTap={this.logout}
+          />
         </IconMenu>
       </div>
     );
@@ -127,7 +130,6 @@ class Navbar extends Component {
             this.props.user.isLoggedIn ? this.renderLoggedMenu() : this.renderLoginSignupBtns()
           }
         />
-
       </div>
     );
   }

@@ -37,9 +37,9 @@ export const getMovie = (movieId) => (dispatch) => {
     });
 };
 
-export const clearMovie = () => (dispatch) => {
-  dispatch({ type: 'CLEAR_MOVIE' });
-};
+export const clearMovie = () => ({
+  type: 'CLEAR_MOVIE',
+});
 
 export const addMovieToFavorite = (movieId, userId) => () => {
   axios.get(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&language=en-US`)

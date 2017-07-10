@@ -28,14 +28,13 @@ class App extends Component {
     this.props.dispatch(getGenres());
   }
 
-  handleSearchSubmit = (query) => {
-    if (query) {
-      this.props.ownProps.router.push(`/search?query=${encodeURIComponent(query)}`);
+  handleSearchSubmit = (userQuery) => {
+    if (userQuery) {
+      this.props.ownProps.router.push(`/search?userQuery=${encodeURIComponent(userQuery)}`);
     }
   };
 
   render() {
-    console.log(this.props);
     return (
       <MuiThemeProvider muiTheme={getMuiTheme(muiTheme)}>
         <div>
@@ -45,7 +44,7 @@ class App extends Component {
           <div className="App__content">
             <SearchInput
               onSubmit={this.handleSearchSubmit}
-              defaultValue={this.props.ownProps.location.query.query || ''}
+              defaultValue={this.props.ownProps.location.query.userQuery || ''}
             />
             { this.props.children }
           </div>
