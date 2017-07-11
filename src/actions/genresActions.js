@@ -12,7 +12,10 @@ export default () => (dispatch) => {
       .catch((e) => {
         dispatch({
           type: 'GET_GENRES_FAIL',
-          payload: e,
+          payload: {
+            error: `${e.message}.`,
+            status: e.response && e.response.data.status_message,
+          },
         });
       });
 };

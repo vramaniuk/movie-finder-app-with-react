@@ -11,9 +11,9 @@ const user = (state = {}, action) => {
     case 'NOT_AUTHORIZED_USER':
       return { ...initialState, error: action.error };
     case 'LOGIN_USER':
-      return { ...initialState, error: action.error };
+      return { ...initialState };
     case 'LOGOUT_USER':
-      return { ...initialState, error: action.error };
+      return { ...initialState };
     case 'CLEAR_USER':
       return { ...initialState, error: action.error };
     default:

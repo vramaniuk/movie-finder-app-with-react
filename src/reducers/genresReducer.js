@@ -5,9 +5,12 @@ const movies = (genres = initialState, action) => {
     case 'GET_GENRES_SUCCESS':
       return [...action.payload.data.genres];
     case 'GET_GENRES_FAIL':
-      return {
-        error: action.payload.error,
-      };
+      return [
+        {
+          error: action.payload.error,
+          errorStatus: action.payload.status,
+        },
+      ];
     default:
       return genres;
   }
