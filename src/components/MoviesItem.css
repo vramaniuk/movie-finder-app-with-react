@@ -1,6 +1,6 @@
 .MoviesItem {
     width: 445px;
-    height: auto;
+    height: 820px;
     margin: 10px;
     align-self: flex-start;
     box-shadow: 2px 2px 2px grey !important
@@ -16,8 +16,8 @@
 
 .MoviesItem-no-image {
     max-width: 500px;
-    height: 250px;
-    background-image: url(../images/image-not_500x250.jpg);
+    height: 668px;
+    background-image: url(../images/image-not_500x750.png);
     background-position: center;
 }
 

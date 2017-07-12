@@ -8,7 +8,8 @@ import {
   getMovie,
   addMovieToFavorite,
   removeMovieFromFavorite,
-  getRecommendedMovies } from '../actions/movieActions';
+  getRecommendedMovies,
+} from '../actions/movieActions';
 
 import MovieDetailsPage from '../components/MovieDetailsPage';
 
@@ -80,8 +81,12 @@ class MovieDetailsPageContainer extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => (
-  { user: state.user, movie: state.movie, ownProps }
-  );
+  {
+    user: state.user,
+    movie: state.movie,
+    ownProps,
+  }
+);
 
 MovieDetailsPageContainer.propTypes = {
   dispatch: PropTypes.func.isRequired,

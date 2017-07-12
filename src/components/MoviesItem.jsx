@@ -37,7 +37,7 @@ const MoviesItem = ({ movie, genres, logged, isFavorite, addToFavorite, removeFr
         {
           movie.backdrop_path ?
             <img
-              src={`https://image.tmdb.org/t/p/w500_and_h281_bestv2${movie.backdrop_path}`}
+              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
               alt=""
             />
             :
