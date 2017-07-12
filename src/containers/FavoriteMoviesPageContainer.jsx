@@ -34,6 +34,7 @@ class FavoriteMoviesPage extends Component {
         movies={movies}
         genres={genres}
         title="Favorite Movies"
+        dispatch={this.props.dispatch}
       />
     );
   }
@@ -41,6 +42,7 @@ class FavoriteMoviesPage extends Component {
 FavoriteMoviesPage.propTypes = {
   user: PropTypes.object.isRequired,
   genres: PropTypes.array.isRequired,
+  dispatch: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({

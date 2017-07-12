@@ -12,7 +12,6 @@ export const getRecommendedMovies = (movieId) => (dispatch) => {
       });
     })
     .catch((error) => {
-      // console.error('getRecommendedMovies error', error);
       dispatch({
         type: 'GET_RECOMMENDED_MOVIE_FAIL',
         payload: error,
@@ -29,7 +28,6 @@ export const getMovie = (movieId) => (dispatch) => {
       });
     })
     .catch((error) => {
-      // console.error('getMovie error', error);
       dispatch({
         type: 'GET_MOVIE_FAIL',
         payload: error,

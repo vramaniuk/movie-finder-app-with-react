@@ -16,32 +16,21 @@ class PopularMoviesPageContainer extends Component {
     this.props.dispatch(clearMovies());
   }
 
-  loadMore = (callback) => {
-    const { page, total_pages } = this.props.movies;
-
-    if (page < total_pages) { // eslint-disable-line camelcase
-      const nextPage = page + 1;
-      this.props.dispatch(callback(nextPage));
-    }
-  };
-
   render() {
     return (
       <MoviesList
-        callback={getPopularMovies}
-        loadMore={this.loadMore}
         movies={this.props.movies}
         genres={this.props.genres}
         title="Popular Movies"
+        dispatch={this.props.dispatch}
       />
     );
   }
 }
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state) => ({
   movies: state.movies,
   genres: state.genres,
-  ownProps,
 });
 
 PopularMoviesPageContainer.propTypes = {
