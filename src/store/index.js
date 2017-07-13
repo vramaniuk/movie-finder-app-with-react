@@ -16,7 +16,7 @@ if (process.env.NODE_ENV !== 'production') {
 const store = createStore(rootReducer,
   /* preloadedState, */
   composeEnhancers(
-  applyMiddleware(...middlewares),
-));
+    applyMiddleware(...middlewares),
+  ));
 
 export default store;

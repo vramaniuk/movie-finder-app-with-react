@@ -5,15 +5,15 @@ export const createNewUser = ({ email, password }) => (dispatch) => {
     type: 'CREATE_NEW_USER',
   });
   firebase.auth().createUserWithEmailAndPassword(email, password)
-    .catch((error) => {
-      dispatch({
-        type: 'CLEAR_USER',
-        error: {
-          code: error.code,
-          message: error.message,
-        },
+      .catch((error) => {
+        dispatch({
+          type: 'CLEAR_USER',
+          error: {
+            code: error.code,
+            message: error.message,
+          },
+        });
       });
-    });
 };
 
 export const logIn = ({ email, password }) => (dispatch) => {
@@ -21,15 +21,15 @@ export const logIn = ({ email, password }) => (dispatch) => {
     type: 'LOGIN_USER',
   });
   firebase.auth().signInWithEmailAndPassword(email, password)
-    .catch((error) => {
-      dispatch({
-        type: 'CLEAR_USER',
-        error: {
-          code: error.code,
-          message: error.message,
-        },
+      .catch((error) => {
+        dispatch({
+          type: 'CLEAR_USER',
+          error: {
+            code: error.code,
+            message: error.message,
+          },
+        });
       });
-    });
 };
 
 export const firebaseStateObserver = () => (dispatch) => {

@@ -57,6 +57,7 @@ class SearchMoviesPageContainer extends Component {
         movies={this.props.movies}
         genres={this.props.genres}
         title="Found Movies"
+        dispatch={this.props.dispatch}
       />
     );
   }
