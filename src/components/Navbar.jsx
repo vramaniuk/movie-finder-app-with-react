@@ -43,27 +43,26 @@ class Navbar extends Component {
     this.props.dispatch(logoutFromFirebase());
   };
 
-  renderLoggedMenu = () => {
-    return (
-      <div>
-        <span style={{ position: 'relative', top: '-6px' }}>Hi, { this.props.user.email }</span>
-        <IconMenu
-          iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}
-          targetOrigin={{ horizontal: 'right', vertical: 'top' }}
-          anchorOrigin={{ horizontal: 'right', vertical: 'top' }}
-        >
-          <MenuItem
-            onTouchTap={() => this.context.router.push('/favorites')}
-            primaryText="Favorite Movies"
-          />
-          <MenuItem
-            primaryText="Log out"
-            onTouchTap={this.logout}
-          />
-        </IconMenu>
-      </div>
-    );
-  };
+  renderLoggedMenu = () => (
+    <div>
+      <span style={{ position: 'relative', top: '-6px' }}>Hi, { this.props.user.email }</span>
+      <IconMenu
+        iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}
+        targetOrigin={{ horizontal: 'right', vertical: 'top' }}
+        anchorOrigin={{ horizontal: 'right', vertical: 'top' }}
+      >
+        <MenuItem
+          onTouchTap={() => this.context.router.push('/favorites')}
+          primaryText="Favorite Movies"
+        />
+        <MenuItem
+          primaryText="Log out"
+          onTouchTap={this.logout}
+        />
+      </IconMenu>
+    </div>
+  );
+
 
   renderLoginSignupBtns = () => (
     <div style={{ marginTop: '6px' }}>

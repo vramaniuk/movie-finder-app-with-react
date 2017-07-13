@@ -11,9 +11,7 @@
   ],
   "parser": "babel-eslint",
   "plugins": [
-    "react",
-    "jsx-a11y",
-    "import"
+    "react"
   ],
   "rules": {
     "linebreak-style": [
@@ -269,25 +267,16 @@
       }
     ],
     "react/no-redundant-should-component-update": "off",
-    "arrow-parens": [
-      "error",
-      "always"
-    ],
-    "arrow-body-style": [
-      2,
-      "as-needed"
-    ],
-    "indent": 1,
-    "no-debugger": 1,
-    "no-console": 1,
-    "new-cap": 1,
-    "strict": 1,
-    "no-underscore-dangle": 1,
-    "no-use-before-define": 1,
-    "eol-last": 2,
-    "quotes": [
-      0,
-      "single"
-    ]
+    "arrow-parens": ["error", "always"],
+    "arrow-body-style": ["error", "as-needed"],
+    "indent": "warn",
+    "no-debugger": "warn",
+    "no-console": "warn",
+    "new-cap": "warn",
+    "strict": "warn",
+    "no-underscore-dangle": "warn",
+    "no-use-before-define": "warn",
+    "eol-last": "error",
+    "quotes": ["off", "single"]
   }
 }

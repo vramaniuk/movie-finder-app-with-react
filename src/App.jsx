@@ -9,7 +9,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import getGenres from './actions/genresActions';
 import { firebaseStateObserver } from './actions/userActions';
 import './App.css';
-import NavbarContainer from './containers/NavbarContainer';
+import Navbar from './components/Navbar';
 import SearchInput from './components/SearchInput';
 import Footer from './components/Footer';
 
@@ -39,7 +39,10 @@ class App extends Component {
       <MuiThemeProvider muiTheme={getMuiTheme(muiTheme)}>
         <div>
           <div className="App__header">
-            <NavbarContainer />
+            <Navbar
+              user={this.props.user}
+              dispatch={this.props.dispatch}
+            />
           </div>
           <div className="App__content">
             <SearchInput
@@ -57,12 +60,15 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => ({ ownProps });
+const mapStateToProps = (state, ownProps) => ({
+  user: state.user,
+  ownProps,
+});
 
 App.propTypes = {
-  location: PropTypes.object.isRequired,
   dispatch: PropTypes.func.isRequired,
   children: PropTypes.object.isRequired,
+  user: PropTypes.object.isRequired,
   ownProps: PropTypes.object.isRequired,
 };
 export default connect(mapStateToProps)(App);

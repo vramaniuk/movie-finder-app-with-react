@@ -18,14 +18,14 @@ const RecommendedMovie = ({ movie }) => (
 const renderMovies = (movies) => {
   if (movies.length) {
     return movies.slice(0, 6).map((movie) => (
-        <Link
-          to={`/movie/${movie.id}`}
-          key={movie.id}
-        >
-          <RecommendedMovie
-            movie={movie}
-          />
-        </Link>
+      <Link
+        to={`/movie/${movie.id}`}
+        key={movie.id}
+      >
+        <RecommendedMovie
+          movie={movie}
+        />
+      </Link>
       ),
     );
   }

@@ -5,11 +5,10 @@ import { connect } from 'react-redux';
 import MoviesList from '../components/MoviesList';
 
 class FavoriteMoviesPage extends Component {
-  renderNoFavoriteMovies = () => {
-    return (
-      <div style={{ textAlign: 'center', marginTop: '20px' }}>There is no favorite movies.</div>
-    );
-  };
+  renderNoFavoriteMovies = () => (
+    <div style={{ textAlign: 'center', marginTop: '20px' }}>There is no favorite movies.</div>
+  );
+
 
   render() {
     const { user, genres } = this.props;
@@ -35,6 +34,7 @@ class FavoriteMoviesPage extends Component {
         genres={genres}
         title="Favorite Movies"
         dispatch={this.props.dispatch}
+        user={this.props.user}
       />
     );
   }

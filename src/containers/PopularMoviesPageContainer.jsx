@@ -23,6 +23,7 @@ class PopularMoviesPageContainer extends Component {
         genres={this.props.genres}
         title="Popular Movies"
         dispatch={this.props.dispatch}
+        user={this.props.user}
       />
     );
   }
@@ -31,10 +32,12 @@ class PopularMoviesPageContainer extends Component {
 const mapStateToProps = (state) => ({
   movies: state.movies,
   genres: state.genres,
+  user: state.user,
 });
 
 PopularMoviesPageContainer.propTypes = {
   movies: PropTypes.object.isRequired,
+  user: PropTypes.object.isRequired,
   genres: PropTypes.array.isRequired,
   dispatch: PropTypes.func.isRequired,
 };

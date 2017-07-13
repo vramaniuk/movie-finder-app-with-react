@@ -58,6 +58,7 @@ class SearchMoviesPageContainer extends Component {
         genres={this.props.genres}
         title="Found Movies"
         dispatch={this.props.dispatch}
+        user={this.props.user}
       />
     );
   }
@@ -65,6 +66,7 @@ class SearchMoviesPageContainer extends Component {
 
 const mapStateToProps = (state, ownProps) => ({
   movies: state.movies,
+  user: state.user,
   genres: state.genres,
   ownProps,
 });
@@ -72,6 +74,7 @@ const mapStateToProps = (state, ownProps) => ({
 SearchMoviesPageContainer.propTypes = {
   ownProps: PropTypes.object.isRequired,
   movies: PropTypes.object.isRequired,
+  user: PropTypes.object.isRequired,
   genres: PropTypes.array.isRequired,
   dispatch: PropTypes.func.isRequired,
 };
