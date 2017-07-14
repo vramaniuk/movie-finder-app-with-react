@@ -7,7 +7,7 @@ import LoadMoreButton from './LoadMoreButton';
 import MoviesItemClass from './MoviesItemClass';
 import './MoviesList.css';
 
-const MoviesList = ({ movies, user, genres, title, dispatch }) => {
+const MoviesList = ({ movies, user, genres, title, dispatch, callback, loadMore }) => {
   if (movies.error) {
     return (
       <h2>{movies.error} <br />{movies.errorStatus}</h2>
@@ -29,6 +29,8 @@ const MoviesList = ({ movies, user, genres, title, dispatch }) => {
         }
       </div>
       <LoadMoreButton
+        callback={callback}
+        loadMore={loadMore}
         page={Number(movies.page)}
         totalPages={Number(movies.total_pages)}
         dispatch={dispatch}
@@ -37,12 +39,19 @@ const MoviesList = ({ movies, user, genres, title, dispatch }) => {
   );
 };
 
+MoviesList.defaultProps = {
+  callback: () => {},
+  loadMore: () => {},
+};
+
 MoviesList.propTypes = {
   movies: PropTypes.object.isRequired,
   user: PropTypes.object.isRequired,
   genres: PropTypes.array.isRequired,
   title: PropTypes.string.isRequired,
   dispatch: PropTypes.func.isRequired,
+  loadMore: PropTypes.func,
+  callback: PropTypes.func,
 };
 
 export default MoviesList;

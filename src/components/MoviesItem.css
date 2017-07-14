@@ -1,6 +1,6 @@
 .MoviesItem {
     width: 445px;
-    height: 820px;
+    min-height: 820px;
     margin: 10px;
     align-self: flex-start;
     box-shadow: 2px 2px 2px grey !important
@@ -32,7 +32,7 @@
 }
 
 .TitleInformation {
-    float: right;
+    /*float: right;*/
     position: absolute;
     top: 5px;
     right: 15px;

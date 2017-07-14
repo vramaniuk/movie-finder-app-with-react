@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { addMovieToFavorite, removeMovieFromFavorite } from '../actions/movieActions';
 import MoviesItem from './MoviesItem';
 
-class MoviesItemContainer extends Component {
+class MoviesItemClass extends Component {
   isFavoriteMovie = () => {
     const { user, movie } = this.props;
     if (user.isLoggedIn) {
@@ -38,10 +38,10 @@ class MoviesItemContainer extends Component {
   }
 }
 
-MoviesItemContainer.propTypes = {
+MoviesItemClass.propTypes = {
   dispatch: PropTypes.func.isRequired,
   user: PropTypes.object.isRequired,
   movie: PropTypes.object.isRequired,
   genres: PropTypes.array.isRequired,
 };
-export default MoviesItemContainer;
+export default MoviesItemClass;
