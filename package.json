@@ -1,7 +1,7 @@
 {
   "name": "movie-finder-app-with-react",
   "version": "1.0.0",
-  "description": "final project EPAM Rolling Scopes 2017",
+  "description": "training react redux app ",
   "main": "index.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
